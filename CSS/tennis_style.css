@@ -1,0 +1,71 @@
+h1
+{
+	color : red;
+}
+h2
+{
+	color : RGB(100,180,50);
+    font-style: oblique;	
+}
+h3
+{
+	color : RGB(0,0,250);
+}
+h4
+{
+	color : RGB(250,0,250);
+	font-size: 20px;
+}
+h5
+{
+	color : #D2691E;
+	font-size: 20px;
+}
+body
+{
+    background-color : #ccffcc;
+}
+
+#paragraphe
+{
+	color : red; 
+}
+#container {
+    margin: 50px;
+}
+#center {
+	text-align: center;
+}
+
+#card {
+	   border: solid;
+       border-width: 1px;
+       border-color:#000000;
+	   border-radius: 15px;
+	   padding: 15px;
+	   margin: 10px 0px 10px 0px;
+	   background-color : #F0F0F0;
+}
+
+#card2 {
+	   border: dotted;
+       border-width: 10px;
+       border-color:#F08080 #ADD8E6 #FFB347 #90EE90;
+	   border-radius: 20px 100px 20px 20px;
+	   padding: 15px;
+	   margin: 10px 0px 10px 0px;
+	   background-color: #FFFFE0;
+}
+#card3 {
+	   border: dashed;
+       border-width: 5px;
+       border-color:#FFB347 #ADD8E6 #F08080 #90EE90;
+	   border-radius: 20px 20px 100px 20px;
+	   padding: 15px;
+	   margin: 10px 0px 10px 0px;
+	   background-color: #FFFFE0;
+}
+#p2 {
+	font-size : 30px;
+	color : #D2691E
+}
