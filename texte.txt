@@ -1,4 +1,15 @@
 Joournal de bord :
 
 
-Vendredi 3 avril, création de la page d'acceuil ainsi que de la page echec sur la maquette. Santiago
+Vendredi 3 avril, 
+    Santiago:
+        création de la page d'acceuil ainsi que de la page echec sur la maquette. 
+    Mathilde: 
+        création de la page tennis sur la maquette 
+    Selma : 
+        création de la page plongée de la maquette
+Jeudi 9 avril, 
+    Selma : 
+        Amélioration avec plus de détails de la page plongée sur la maquette
+    Santiago Mathilde et Selma: 
+        Installation de Visual studio Code avec GitHub et mise en commun du fichier 
