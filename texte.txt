@@ -13,3 +13,6 @@ Jeudi 9 avril,
         Amélioration avec plus de détails de la page plongée sur la maquette
     Santiago Mathilde et Selma: 
         Installation de Visual studio Code avec GitHub et mise en commun du fichier 
+Vendredi 10 avril,
+    Santiago :
+        implentation d'un jeu d'echec fonctionelle en java script 
