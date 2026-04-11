@@ -3,6 +3,7 @@
     <head>
         <title>Le tennis</title>
 		<link rel="stylesheet" href="CSS/tennis_style.css">
+		<script src="tennis.js"></script>
     </head>
     <body>
 	    <div id="container">
@@ -15,7 +16,7 @@
             <main>
 		     	<section id="histoire">
                     <div class="conteneur">
-                        <img class="alignRight"; src="https://service-tennis.fr/wp-content/uploads/2022/10/construction-court-de-tennis-a-Marseill-et-aix-en-provence-4.jpg" width="300" height="200" alt="Un terrain en rézine">
+                        <img class="alignRight"; src="https://www.ducksters.com/sports/tennis_strategy_pd.jpg" width="300" height="200" alt="histoire_tennis">
         		        <div id="card">
 		                	<div id="center">
 			                	<h2>L'histoire du tennis</h2>
@@ -42,54 +43,57 @@
 			        	</div>
 					</div>
 			    </section>
+		    	
 			
-
-		    	<section id="nombre de joueurs">
-		        	<div id="card">
-			            <h3>A combien pouvons-nous jouer au tennis ?</h3>
-			        	<p> Il est possible de jouer au tennis soit à 2 (1 contre 1) ou soit à 4 (2 contre 2). En effet, ces deux combinaisons sont possible car il est possible de jouer :</p>
-			         	<ul>
-			        	    <li>En <strong>simple</strong></li>
-				        	<li>En <strong>double</strong></li>
-				        </ul>
-				
-			    <section id="image tennis">
-				    <h3>Il existe 3 surface différents pour les terrains de tennis</h3>
+				<section id="Les points">
+					<div id="card4">
+			        <h2>Le comptage des sets</h2>
+				    <p>Pour gagner un set, un joeur doit remporter 6 jeux avec au moins 2 jeux d'écart.</p>
 				    <ul>
-				        <li><h4><em>Les terres battues :</em></h4></li>
-				        <img src="https://t3.ftcdn.net/jpg/00/71/50/88/360_F_71508869_xpdfnp8FoXwv2mm8MdugYGH35OSVzsVm.jpg" width="300" height="200" alt="Un terrain en terre battue">
-				        <li><h4><em>Les résines :</em></h4></li>
-				        <img src="https://service-tennis.fr/wp-content/uploads/2022/10/construction-court-de-tennis-a-Marseill-et-aix-en-provence-4.jpg" width="300" height="200" alt="Un terrain en rézine">
-				        <li><h4><em>Les gazons :</em></h4></li>
-				        <img src="https://th.bing.com/th/id/OIP.pIGVZKcCzCv_0YqCea-6EQHaFj?rs=1&pid=ImgDetMain" width="300" height="200" alt="Un terrain en gazon">
+				        <li>Scores possibles : 6-0, 6-2, 6-4</li>
+					    <li>A 5-5 → il faut aller à 7-5</li>
+					    <li>A 6-6 → tie-break</li>
 				    </ul>
-		     	</section>
-				
+					<p>Le tie-break est un jeu spécial qui permet de départager les joueurs en 7 points.</p>
+					</div>
+				</section>
+
 		    	<section id="Les points">
-			        <h3>Le comptage des points</h3>
-				    <p>Le décompte des points, au tennis, un jeu se compose de 4 points.On compte les points du serveur en premier.</p>
+			        <h2>Le comptage des points</h2>
+				    <p>Le tennis utilise un système de points unique :</p>
 				    <ul>
-				        <li>Pas de point : <strong>« zéro »</strong></li>
+				        <li>Pas de point : <strong>« 0 »</strong> ou <strong>« Love »</strong></li>
 					    <li>Premier point : <strong>« 15 »</strong></li>
 					    <li>Deuxième point : <strong>« 30 »</strong></li>
 					    <li>Troisième point : <strong>« 40 »</strong></li>
 					    <li>Quatrième point : <strong>« jeu »</strong></li>
 				    </ul>
-			     	<p>Après « 40A », le point suivant se note « Avantage » pour le joueur qui le gagne. Si le même joueur gagne un autre point alors il gagne le « jeu ». Sinon les deux joueurs repartent à « égalité » (soit « 40A »). Pour gagner un match il faut gagner 2 sets (ou manche). Un set, correspond à 6 jeux. Lorsqu'il y a « 5-5 », il faut aller jusqu’à 7 jeux. S’il y a « 6-6 » on réalise alors un « jeu décisif » (tie break). Le « jeu décisif » se compte différemment des autres jeux. En effet, la marque des points est compté « zéro », « 1 », « 2 », « 3 », … jusqu'à 7. Le premier joueur allant à 7 points remporte le « jeu décisif » et le set, à condition d’avoir 2 points d’écart sur son adversaire. S’il y a « 6-6 », alors le jeu décisif continuera jusqu'à ce qu'il y ait 2 points d’écart.</p>
+			     	<p>A 40-40, il faut deux points d'écart pour gagner : avantage puis jeu.</p>
                 </section>
 			
-                <section id="classement">
-                    <h3>Top 3 des joueurs les plus forts du monde</h3>
-                    <ol>
-					    <div id= "paragraphe">
-                        <li>Novak Djokovic</li>
-                        <li>Rafael Nadal</li>
-					    <li>Roger Federer</li>
-						</div>
-                    </ol>
-			    </div>
-            </section>
-			
+				<section id="joueurs">
+					<label for="joueur-select">Choisissez un joueur&nbsp; :</label>
+					<select name="joueur" id="joueur-select">
+						<option value="">--Veuillez choisir une option--</option>
+						<option value="Novak Djokovic">Novak Djokovic</option>
+						<option value="Rafael Nadal">Rafael Nadal</option>
+						<option value="Roger Federer">Roger Federer</option>
+						<option value="Jannik Sinner">Jannik Sinner</option>
+						<option value="Carlos Alcaraz">Carlos Alcaraz</option>
+					</select>
+					<br><br/>
+
+					<label for="joueuse-select">Choisissez une joueuse&nbsp; :</label>
+					<select name="joueuse" id="joueuse-select">
+						<option value="">--Veuillez choisir une option--</option>
+						<option value="Aryna Sabalenka">Aryna Sabalenka</option>
+						<option value="Serena Williams">Serena Williams</option>
+						<option value="Loïs Boisson">Loïs Boisson</option>
+						<option value="Jannik Sinner">Jannik Sinner</option>
+						<option value="Carlos Alcaraz">Carlos Alcaraz</option>
+					</select>
+				</section>
+
 			<section id="liens">
 		        <div id="card2">
 			        <h5>Liens en rapport avec le tennis</h5>

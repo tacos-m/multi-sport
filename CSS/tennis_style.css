@@ -69,17 +69,21 @@ body
 	   background-color: #FFFFE0;
 }
 #card3 {
-	   border: dashed;
-       border-width: 5px;
-       border-color:#FFB347 #ADD8E6 #F08080 #90EE90;
-	   border-radius: 20px 20px 100px 20px;
+	   border: solid;
+       border-width: 1px;
+       border-color:green;
+	   border-radius: 400px 400px 400px 400px;
 	   padding: 15px;
 	   margin: 10px 0px 10px 0px;
-	   background-color: #FFFFE0;
+	   background-color: greenyellow;
 }
+#card4 {
+	float: right;
+}
+
 #p2 {
 	font-size : 30px;
-	color : #D2691E
+	color : #000000
 }
 
 img.alignLeft{
@@ -91,4 +95,19 @@ img.alignRight{
 	margin: 15px 100px 15px 15px;
 	float: right;
 	border: 1px solid rgb(7, 96, 30)
+}
+p.alignLeft{
+	text-align: left;
+}
+p.alignRight{
+	text-align: right;
+}
+label {
+	font-family: sans-serif;
+	font-size: 1rem;
+	padding-right: 10px;
+}
+select {
+	font-size: 0.9rem;
+	padding: 2px 5px;
 }
