@@ -1,6 +1,5 @@
 Joournal de bord :
 
-
 Vendredi 3 avril, 
     Santiago:
         création de la page d'acceuil ainsi que de la page echec sur la maquette. 
@@ -16,3 +15,8 @@ Jeudi 9 avril,
 Vendredi 10 avril,
     Santiago :
         implentation d'un jeu d'echec fonctionelle en java script 
+    Mathilde : 
+        Début de l'html de la page sur le tennis (head + Histoire du tennis, Règles du tennis) 
+Samedi 11 avril, 
+    Mathilde : 
+        Création du CSS sur la page de tennis ( couleurs de fond, titre, encadrées, photo alignées au texte )
