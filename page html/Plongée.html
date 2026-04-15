@@ -1,26 +1,78 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Plongée sous-marine</title>
-        <link rel="stylesheet" href="CSS/Plongée.css">
-    </head>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Plongée sous-marine</title>
+    <link rel="stylesheet" href="Plongée.css">
+</head>
 
-  <p> Découvrir la Plongée sous marine : .... </p>
+<body>
 
-  <div class="row">
-  <div class="column">
-    <img src="img_snow.jpg" alt="Snow" style="width:100%">
-  </div>
-  <div class="column">
-    <img src="img_forest.jpg" alt="Forest" style="width:100%">
-  </div>
-  <div class="column">
-    <img src="img_mountains.jpg" alt="Mountains" style="width:100%">
-  </div>
+<header>
+    <h2> Page Plongée</h2>
+    <nav>
+        <button>Accueil</button>
+        <button>Tennis</button>
+        <button class="active">Plongée</button>
+        <button>Echecs</button>
+    </nav>
+</header>
+
+<!-- INTRO -->
+<section class="container">
+    <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7" alt="plongée">
+
+    <div class="intro">
+        <h3>Découvrir la plongée</h3>
+        <p>
+            La plongée sous-marine permet d’explorer les fonds marins,
+            observer des espèces uniques et vivre une expérience exceptionnelle.
+        </p>
+    </div>
+</section>
+
+<!-- BLOCS -->
+<section class="blocks">
+    <div class="block">
+        <h4>Matériel</h4>
+        <button onclick="openPopup('materiel')">Voir</button>
+    </div>
+
+    <div class="block">
+        <h4>Lieux</h4>
+        <button onclick="openPopup('lieux')">Voir</button>
+    </div>
+
+    <div class="block">
+        <h4>Bienfaits</h4>
+        <button onclick="openPopup('bienfaits')">Voir</button>
+    </div>
+
+    <div class="block">
+        <h4>Niveaux</h4>
+        <button onclick="openPopup('niveaux')">Voir</button>
+    </div>
+</section>
+
+<!-- POPUP -->
+<div id="popup" class="popup">
+    <p id="popupText"></p>
+    <button onclick="closePopup()">Fermer</button>
 </div>
-  
-  
-    <body>
-        
-    </body>
+
+<!-- QUIZ -->
+<section class="quiz">
+    <h3>Quiz : Teste tes connaissances</h3>
+    <p>Quel équipement permet de respirer sous l’eau ?</p>
+
+    <button onclick="checkAnswer('a')">Masque</button>
+    <button onclick="checkAnswer('b')">Détendeur</button>
+    <button onclick="checkAnswer('c')">Palmes</button>
+
+    <p id="result"></p>
+</section>
+
+<script src="script.js"></script>
+
+</body>
 </html>
