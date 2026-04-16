@@ -103,3 +103,35 @@ button:active {
     text-align: center;
 }
 
+.chess-section {
+  margin: 30px auto;
+  width: fit-content;
+}
+
+.chess-label {
+  background-color: #6d3707;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 10px 10px 0 0;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 3px solid #854906;
+}
+
+#chess-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+body {
+  padding-bottom: 20px;
+}
+
+.chess-section {
+  margin-bottom: 20px;
+}
+#chess-container {
+  overflow: hidden;
+}

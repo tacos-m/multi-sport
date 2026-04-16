@@ -46,7 +46,8 @@ var matrix = [
 
 
 function setup() {
-  createCanvas(600 * a, 400 * a);
+  let monCanvas = createCanvas(600 * a, 400 * a);
+monCanvas.parent('chess-container');
 //////////////////////////////////////////////////////////////////////////////////////////.    ma musioqeu addell Skyffal 
   
  
@@ -54,16 +55,16 @@ function setup() {
   
   
   ////////////////////////////////////////////////////////////////////////////////////////// affichage du bouton recommencer
-  button = createButton("Recommencer");
+ button = createButton("Recommencer");
+button.parent('chess-container');  // ← ajoute ça
 
-  ////////////////////////////////////////////////////////////////////////////////////////// affichage du bonton rock
-  button2 = createButton("rock");
-  ////////////////////////////////////////////////////////////////////////////////////////// Lien des règles du jeux
-  lien = createA(
-    "https://www.bonzai.pro/lux/posts/J2kM_14396/comprendre-les-bases-essentielles-des-echecs",
-    "Règles du jeu d'échec  ©️Lux",
-    "_blank"
-  );
+button2 = createButton("rock");
+button2.parent('chess-container');  // ← ajoute ça
+
+lien = createA("...", "Règles du jeu d'échec ©️Lux", "_blank");
+lien.parent('chess-container');
+
+  
 }
 //////////////////////////////////// dessiner l'échiquier
 function dessinEchiquier() {
@@ -249,7 +250,7 @@ function draw() {
       height / 8 + 40 * a
     );
 
-    lien.position(20 * a, height / 8 + 850 * a);
+    lien.position(20 * a, height / 8 + 65 * a);
     text(
       "Vous avez aussi un temps limité pour jouer votre partie : 3 minutes par joueurs, attention a ne pas dépasser !",
       20 * a,
