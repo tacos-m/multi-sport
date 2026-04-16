@@ -22,4 +22,6 @@ Samedi 11 avril,
         Création du CSS sur la page de tennis ( couleurs de fond, titre, encadrées, photo alignées au texte )
 Mercredi 15 avril, 
     Selma :
-        Création de la page Htlm plongé et Java scipt 
+        Création de la page Htlm plongé et css
+    Mathilde :
+        Création des popup de la liste de selection
