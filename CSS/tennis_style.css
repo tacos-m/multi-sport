@@ -1,12 +1,30 @@
-h1
-{
-	color : rgb(7, 96, 30);
+header {
+    background-color: rgb(7, 96, 30);
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
 }
+
+ button {
+    padding: 10px 16px;
+    margin: 5px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.25s ease;
+    background: white;
+    color: #2c6ebd;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
 h2
 {
 	color : RGB(100,180,50);
     font-style: oblique;	
 }
+
 h3
 {
 	color : RGB(0,0,250);
