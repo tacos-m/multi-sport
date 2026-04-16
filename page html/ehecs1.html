@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Page Echecs</title>
+    <link rel="stylesheet" href="../CSS/chess.css">
+</head>
+
+<body>
+
+<header>
+    <h2> Page Echecs</h2>
+    <nav>
+        <button>Accueil</button>
+        <button>Tennis</button>
+        <button>Plongée</button>
+        <button class="active">Echecs</button>
+    </nav>
+</header>
+
+<!-- INTRO -->
+<section class="container">
+    <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7" alt="plongée">
+
+    <div class="intro">
+        <h3>Découvrir le jeu d'échecs</h3>
+        <p>
+            Le jeu d'échecs est un jeu de stratégie qui se joue à deux,
+            opposant des pièces de différentes valeurs sur un plateau de 64 cases.
+        </p>
+    </div>
+</section>
+
+<!-- BLOCS -->
+<section class="blocks">
+    <div class="block">
+        <h4>Matériel</h4>
+        <button onclick="openPopup('materiel')">Voir</button>
+    </div>
+
+    <div class="block">
+        <h4>Lieux</h4>
+        <button onclick="openPopup('lieux')">Voir</button>
+    </div>
+
+    <div class="block">
+        <h4>Bienfaits</h4>
+        <button onclick="openPopup('bienfaits')">Voir</button>
+    </div>
+
+    <div class="block">
+        <h4>Niveaux</h4>
+        <button onclick="openPopup('niveaux')">Voir</button>
+    </div>
+</section>
+
+<!-- POPUP -->
+<div id="popup" class="popup">
+    <p id="popupText"></p>
+    <button onclick="closePopup()">Fermer</button>
+</div>
+
+<!-- QUIZ -->
+<section class="quiz">
+    <h3>Quiz : Teste tes connaissances</h3>
+    <p>Quel équipement permet de respirer sous l’eau ?</p>
+
+    <button onclick="checkAnswer('a')">Masque</button>
+    <button onclick="checkAnswer('b')">Détendeur</button>
+    <button onclick="checkAnswer('c')">Palmes</button>
+
+    <p id="result"></p>
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
