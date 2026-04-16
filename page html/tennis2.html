@@ -92,25 +92,54 @@
     </div>
 </section>
 
-<!-- POPUP -->
-<div id="popup" class="popup">
-    <p id="popupText"></p>
-    <button onclick="closePopup()">Fermer</button>
-</div>
+<!-- JOUEURS -->
+<section id="joueurs">
+	<div class="selectors">
+      	<div class="selector-group">
+        	<label for="joueur">Choisissez un joueur :</label>
+        	<select id="joueur">
+          		<option value="">-- Veuillez choisir une option --</option>
+          		<option value="djokovic">Novak Djokovic</option>
+          		<option value="nadal">Rafael Nadal</option>
+          		<option value="federer">Roger Federer</option>
+          		<option value="sinner">Jannik Sinner</option>
+          		<option value="alcaraz">Carlos Alcaraz</option>
+        	</select>
+      	</div>
 
-<!-- QUIZ -->
-<section class="quiz">
-    <h3>Quiz : Teste tes connaissances</h3>
-    <p>Quel équipement permet de respirer sous l’eau ?</p>
-
-    <button onclick="checkAnswer('a')">Masque</button>
-    <button onclick="checkAnswer('b')">Détendeur</button>
-    <button onclick="checkAnswer('c')">Palmes</button>
-
-    <p id="result"></p>
+      	<div class="selector-group">
+        	<label for="joueuse">Choisissez une joueuse :</label>
+        	<select id="joueuse">
+          		<option value="">-- Veuillez choisir une option --</option>
+          		<option value="swiatek">Iga Świątek</option>
+          		<option value="sabalenka">Aryna Sabalenka</option>
+          		<option value="gauff">Coco Gauff</option>
+          		<option value="williams">Serena Williams</option>
+          		<option value="halep">Simona Halep</option>
+        	</select>
+      	</div>
+    </div>
 </section>
 
-<script src="script.js"></script>
+<div id="overlay" class="overlay hidden">
+    <div class="popup">
+      	<button class="close-btn" id="closeBtn">&times;</button>
+      	<img id="popup-photo" src="" alt="Photo du joueur" />
+      	<h2 id="popup-nom"></h2>
+      	<p id="popup-nationalite"></p>
+      	<p id="popup-naissance"></p>
+      	<p id="popup-classement"></p>
+      	<p id="popup-palmares"></p>
+    </div>
+</div>
+
+<!-- JEU -->
+<section class="jeu">
+    <p>A vous de jouer !</p>
+    <button onclick="checkAnswer('a')">Cliquez ici pour jouer</button>
+</section>
+
+<script src="../Script/Tennis2.js"></script>
 
 </body>
 </html>
