@@ -38,10 +38,6 @@ var matrix = [
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// SETUP
 
-function preload() {
- 
-  mySound = loadSound('musique.mp3');
-}
 
 
 
@@ -53,7 +49,7 @@ function setup() {
   createCanvas(600 * a, 400 * a);
 //////////////////////////////////////////////////////////////////////////////////////////.    ma musioqeu addell Skyffal 
   
-  mySound.play();
+ 
   
   
   
@@ -90,9 +86,7 @@ function dessinEchiquier() {
 function draw() {
   background("Goldenrod");
 
-  if(mySound.isPlaying()==false){
-    mySound.play()
-  }
+  
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// code popur demarer le jeu
   if (keyCode === 83) {
     start = true;
@@ -247,7 +241,7 @@ function draw() {
 
     fill("white");
     textSize(25 * a);
-    text("Welcom !!!", width / 3 + 30 * a, height / 8);
+    text("Welcome !!!", width / 3 + 30 * a, height / 8);
     textSize(10 * a);
     text(
       "Voici un jeu d'echec a 2 joueurs, vous pourez retrouver l'ensemble des règles dans le lien ci dessous : ",
@@ -255,7 +249,7 @@ function draw() {
       height / 8 + 40 * a
     );
 
-    lien.position(20 * a, height / 8 + 65 * a);
+    lien.position(20 * a, height / 8 + 850 * a);
     text(
       "Vous avez aussi un temps limité pour jouer votre partie : 3 minutes par joueurs, attention a ne pas dépasser !",
       20 * a,
@@ -342,27 +336,6 @@ function rock() {
 
 
 /////////////////////////////////////////// blanc 
-
-/* 
-if (tourB%2==0 ){
-if (matrix[posiY][posiX]=="♖"||"♘"||"♗"||"♕"||"♔"||"♙"){
-.............. code du bouger ....................
-
-}
-}
-
-
-if (tourB%2!=0 ){
-if (matrix[posiY][posiX]=="♜"||"♞"||"♝"||"♛"||"♚"||"♟"){
-.............. code du bouger ....................
-
-}
-}
-
-
-
-
-*/
 
 
 
