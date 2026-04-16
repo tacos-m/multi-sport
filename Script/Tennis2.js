@@ -72,7 +72,7 @@ const joueuses = {
     naissance: "Née le 26 septembre 1981 à Saginaw",
     classement: "Ancienne N°1 mondiale (23 titres du Grand Chelem)",
     palmares: "🏆 Australian Open (7×), Roland-Garros (3×), Wimbledon (7×), US Open (6×)",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Serena_Williams_at_the_2013_US_Open.jpg/440px-Serena_Williams_at_the_2013_US_Open.jpg"
+    photo: "../images/williams.jpg"
   },
   halep: {
     nom: "Simona Halep",
