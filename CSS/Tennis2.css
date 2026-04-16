@@ -53,6 +53,7 @@ button:active {
 .container img {
     width: 50%;
     border-radius: 10px;
+    border: 1px solid rgb(7, 96, 30)
 }
 
 .intro {
@@ -200,7 +201,7 @@ button:active {
 }
 
 .close-btn:hover {
-  color: #c0392b;
+  color: white;
 }
 /* JEU */
 .jeu {

@@ -101,7 +101,7 @@ function afficherPopup(data) {
   photo.src = data.photo;
   photo.alt = "Photo de " + data.nom;
   nom.textContent = data.nom;
-  nationalite.innerHTML = "<strong>Nationalité :</strong> " + data.nationalite;
+  nationalite.innerHTML = "<strong>Pays d'origine :</strong> " + data.nationalite;
   naissance.innerHTML   = "<strong>Date de naissance :</strong> " + data.naissance;
   classement.innerHTML  = "<strong>Classement :</strong> " + data.classement;
   palmares.innerHTML    = "<strong>Palmarès :</strong> " + data.palmares;
