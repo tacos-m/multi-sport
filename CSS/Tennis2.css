@@ -29,7 +29,7 @@ header {
 
 button:hover {
     transform: translateY(-3px);
-    background: #2c6ebd;
+    background: rgb(7, 96, 30);
     color: white;
     box-shadow: 0 6px 14px rgba(0,0,0,0.25);
 }
@@ -53,6 +53,7 @@ button:active {
 .container img {
     width: 50%;
     border-radius: 10px;
+    border: 1px solid rgb(7, 96, 30)
 }
 
 .intro {
@@ -72,8 +73,7 @@ button:active {
 .block {
     background-color: #e8f5d0;
     padding: 15px;
-    width: 20%;
-    text-align: center;
+    width: 45%;
     border-radius: 10px;
 }
 
@@ -83,20 +83,128 @@ button:active {
 }
 
 /* POPUP */
-.popup {
-    display: none;
-    position: fixed;
-    top: 25%;
-    left: 30%;
-    width: 40%;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    border: 2px solid black;
+.selectors {
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-/* QUIZ */
-.quiz {
+.selector-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.selector-group label {
+  font-weight: bold;
+  color: #2d5a10;
+  min-width: 200px;
+}
+
+.selector-group select {
+  padding: 0.5rem 0.75rem;
+  border: 1.5px solid #8fbc5a;
+  border-radius: 6px;
+  background: white;
+  font-size: 15px;
+  cursor: pointer;
+  min-width: 260px;
+  transition: border-color 0.2s;
+}
+
+.selector-group select:hover,
+.selector-group select:focus {
+  border-color: #3a7d1e;
+  outline: none;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.popup {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem 2rem 1.75rem;
+  max-width: 380px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  animation: slideUp 0.25s ease;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+#popup-photo {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  border: 4px solid #8fbc5a;
+  margin-bottom: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.popup h2 {
+  font-size: 1.3rem;
+  color: #3a7d1e;
+  margin-bottom: 0.75rem;
+}
+
+.popup p {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+
+.popup p strong {
+  color: #1a1a1a;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #888;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: white;
+}
+/* JEU */
+.jeu {
     background-color: rgb(7, 96, 30);
     color: white;
     padding: 20px;
@@ -110,4 +218,7 @@ button:active {
 #sous-titre {
     color : RGB(100,180,50);
     font-style: oblique;
+}
+h3 {
+    color: rgb(7, 96, 30);
 }
