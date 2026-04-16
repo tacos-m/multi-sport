@@ -15,7 +15,7 @@ header {
     font-weight: bold;
     transition: all 0.25s ease;
     background: white;
-    color: #2c6ebd;
+    color: rgb(7, 96, 30);
     box-shadow: 0 3px 8px rgba(0,0,0,0.15);
 }
 
@@ -52,8 +52,21 @@ body
 {
 	color : red; 
 }
-#container {
-    margin: 50px;
+.container {
+    display: flex;
+    padding: 20px;
+}
+
+.intro {
+    background-color: #8fb3e0;
+    padding: 20px;
+    margin-left: 20px;
+    border-radius: 10px;
+}
+
+.container img {
+    width: 50%;
+    border-radius: 10px;
 }
 #center {
 	text-align: center;
