@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>MultiSport</title>
+    <link rel="stylesheet" href="../CSS/accueil.css">
+</head>
+
+<body>
+
+<header>
+    <h2> Accueil</h2> 
+    <nav>
+        <button class="active">Accueil</button>
+        <button>Tennis</button>
+        <button>Plongée</button>
+        <button>Echecs</button>
+    </nav>
+</header>
+
+<!-- INTRO -->
+<section class="container">
+    <img src="../images/image-plongee.jpg" alt="plongée">
+
+    <div class="intro">
+        <h3>Découvrir la plongée</h3>
+        <p>
+            La plongée sous-marine permet d’explorer les fonds marins,
+            observer des espèces uniques et vivre une expérience exceptionnelle. Venez découvrir tout cela à travers cette page.
+        </p>
+    </div>
+</section>
+
+<!-- BLOCS -->
+<section class="blocks">
+    <div class="block">
+        <h4>Matériel</h4>
+        <button onclick="openPopup('materiel')">Voir</button>
+    </div>
+
+    <div class="block">
+        <h4>Lieux</h4>
+        <button onclick="openPopup('lieux')">Voir</button>
+    </div>
+
+    <div class="block">
+        <h4>Bienfaits</h4>
+        <button onclick="openPopup('bienfaits')">Voir</button>
+    </div>
+
+    <div class="block">
+        <h4>Niveaux</h4>
+        <button onclick="openPopup('niveaux')">Voir</button>
+    </div>
+</section>
+
+<!-- POPUP -->
+<div id="popup" class="popup">
+    <p id="popupText"></p>
+    <button onclick="closePopup()">Fermer</button>
+</div>
+
+<!-- QUIZ -->
+<section class="quiz">
+    <h3>Quiz : Teste tes connaissances</h3>
+    <p>Quel équipement permet de respirer sous l’eau ?</p>
+
+    <button onclick="checkAnswer('a')">Masque</button> 
+    <button onclick="checkAnswer('b')">Détendeur</button>
+    <button onclick="checkAnswer('c')">Palmes</button>
+
+    <p id="result"></p>
+</section>
+
+<script src="../Script/accueil.js"></script>
+
+</body>
+</html>
