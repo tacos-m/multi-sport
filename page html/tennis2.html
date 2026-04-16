@@ -20,38 +20,75 @@
 
 <!-- INTRO -->
 <section class="container">
-    <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7" alt="plongée">
+    <img src="../images/histoir_tennis.jpg" alt="tennis">
 
     <div class="intro">
         <div id="center">
             <div id="sous-titre">
                  <h2>L'histoire du tennis</h2>
             </div>
-			<p>Le tennis est né entre 1850 et 1870. Ce sport est une adaptation anglaise du jeu de paume. La première mise en jeu 'effectuant à quinze pieds, puis trente, puis quarante, d'où la façon particulière de compter les points dans le tennis moderne. Il semble que le premier tournoi de tennis eut lieu en août 1876 sur un court aménagé dans la propriété de M. William Appleton à Nahant dans le Massachusetts</p>          
+			<p>Le tennis est né entre 1850 et 1870. Ce sport est une adaptation anglaise du jeu de paume. La première mise en jeu s'effectuant à quinze pieds, puis trente, puis quarante, d'où la façon particulière de compter les points dans le tennis moderne. Il semble que le premier tournoi de tennis eut lieu en août 1876 sur un court aménagé dans la propriété de M. William Appleton à Nahant dans le Massachusetts</p>          
         </div>
+    </div>
+</section>
+
+<section class="container">
+    <img src="../images/terrain_tennis.jpg" alt="tennis">
+
+    <div class="intro">
+        <div id="center">
+            <div id="sous-titre">
+                 <h2>Les règles du tennis</h2>
+            </div>
+        </div>
+            <ol>
+                <li>La balle doit <strong>rebondir dans le court adverse</strong>, sinon c'est une faute.<hr></li>
+                <li>Au <strong>service</strong>, le joueur dispose de <strong>2 tentatives</strong>. Deux fautes = double fautes → point perdu.<hr></li>
+                <li>La balle peut touvher le filet au service si elle retombe dans le carré : c'est un <strong>let</strong>, le service est redonné<hr></li>
+                <li>Les joueurs <strong>alternent le service</strong> à chaque jeu.<hr></li>
+                <li>En simple, les couloirs latéraux sont <strong>hors jeu</strong>. En double ils sont valides.</li>
+            </ol>        
     </div>
 </section>
 
 <!-- BLOCS -->
 <section class="blocks">
     <div class="block">
-        <h4>Matériel</h4>
-        <button onclick="openPopup('materiel')">Voir</button>
+        <div id="center">
+            <div id="sous-titre">
+                <h3>Le comptage d'un jeu</h3>
+            </div>
+        </div>
+        <p>Le tennis utilise un système de points unique :</p>
+		<ul>
+			<li>Pas de point : <strong>« 0 »</strong> ou <strong>« Love »</strong></li>
+			<li>Premier point : <strong>« 15 »</strong></li>
+			<li>Deuxième point : <strong>« 30 »</strong></li>
+			<li>Troisième point : <strong>« 40 »</strong></li>
+			<li>Quatrième point : <strong>« jeu »</strong></li>
+		</ul>
+		<p>A 40-40, il faut deux points d'écart pour gagner : avantage puis jeu.</p>
+        <div id="center">
+            <button onclick="openPopup('materiel')">Simulez un jeu</button>
+        </div>
     </div>
 
     <div class="block">
-        <h4>Lieux</h4>
-        <button onclick="openPopup('lieux')">Voir</button>
-    </div>
-
-    <div class="block">
-        <h4>Bienfaits</h4>
-        <button onclick="openPopup('bienfaits')">Voir</button>
-    </div>
-
-    <div class="block">
-        <h4>Niveaux</h4>
-        <button onclick="openPopup('niveaux')">Voir</button>
+        <div id="center">
+            <div id="sous-titre">
+                <h3>Le comptage d'un set</h3>
+            </div>
+        </div>
+        <p>Pour gagner un set, un joeur doit remporter 6 jeux avec au moins 2 jeux d'écart.</p>
+		<ul>
+			<li>Scores possibles : 6-0, 6-2, 6-4</li>
+			<li>A 5-5 → il faut aller à 7-5</li>
+			<li>A 6-6 → tie-break</li>
+		</ul>
+		<p>Le tie-break est un jeu spécial qui permet de départager les joueurs en 7 points.</p>
+        <div id="center">
+            <button onclick="openPopup('set')">Simulez un set</button>
+        </div>
     </div>
 </section>
 
