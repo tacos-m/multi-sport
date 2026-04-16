@@ -1,7 +1,5 @@
 // variable d'agrandissement
-let a = prompt(
-  "Quel taille voulez vous ?(entre 0.75 et 3 en fonction de la taille de l'ecran, 2 conseillé pour ce pc)"
-);
+let a = 1;
 let temps = 3;
 let carre = 50 * a;
 let selec = 0;
