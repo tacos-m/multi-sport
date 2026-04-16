@@ -2,31 +2,31 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Plongée sous-marine</title>
-    <link rel="stylesheet" href="../CSS/Plongée.css">
+    <title>Page Echecs</title>
+    <link rel="stylesheet" href="../CSS/chess.css">
 </head>
 
 <body>
 
 <header>
-    <h2> La Plongée  sous-marine</h2> 
+    <h2> Page Echecs</h2>
     <nav>
         <button>Accueil</button>
         <button>Tennis</button>
-        <button class="active">Plongée</button>
-        <button>Echecs</button>
+        <button>Plongée</button>
+        <button class="active">Echecs</button>
     </nav>
 </header>
 
 <!-- INTRO -->
 <section class="container">
-    <img src="../images/image-plongee.jpg" alt="plongée">
+    <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7" alt="plongée">
 
     <div class="intro">
-        <h3>Découvrir la plongée</h3>
+        <h3>Découvrir le jeu d'échecs</h3>
         <p>
-            La plongée sous-marine permet d’explorer les fonds marins,
-            observer des espèces uniques et vivre une expérience exceptionnelle. Venez découvrir tout cela à travers cette page.
+            Le jeu d'échecs est un jeu de stratégie qui se joue à deux,
+            opposant des pièces de différentes valeurs sur un plateau de 64 cases.
         </p>
     </div>
 </section>
@@ -65,14 +65,14 @@
     <h3>Quiz : Teste tes connaissances</h3>
     <p>Quel équipement permet de respirer sous l’eau ?</p>
 
-    <button onclick="checkAnswer('a')">Masque</button> 
+    <button onclick="checkAnswer('a')">Masque</button>
     <button onclick="checkAnswer('b')">Détendeur</button>
     <button onclick="checkAnswer('c')">Palmes</button>
 
     <p id="result"></p>
 </section>
 
-<script src="../Script/Plongée.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>

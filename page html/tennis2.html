@@ -2,32 +2,33 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Plongée sous-marine</title>
-    <link rel="stylesheet" href="../CSS/Plongée.css">
+    <title>Tennis</title>
+    <link rel="stylesheet" href="../CSS/Tennis2.css">
 </head>
 
 <body>
 
 <header>
-    <h2> La Plongée  sous-marine</h2> 
+    <h2> Page Tennis</h2>
     <nav>
         <button>Accueil</button>
-        <button>Tennis</button>
-        <button class="active">Plongée</button>
+        <button class="active">Tennis</button>
+        <button>Plongée</button>
         <button>Echecs</button>
     </nav>
 </header>
 
 <!-- INTRO -->
 <section class="container">
-    <img src="../images/image-plongee.jpg" alt="plongée">
+    <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7" alt="plongée">
 
     <div class="intro">
-        <h3>Découvrir la plongée</h3>
-        <p>
-            La plongée sous-marine permet d’explorer les fonds marins,
-            observer des espèces uniques et vivre une expérience exceptionnelle. Venez découvrir tout cela à travers cette page.
-        </p>
+        <div id="center">
+            <div id="sous-titre">
+                 <h2>L'histoire du tennis</h2>
+            </div>
+			<p>Le tennis est né entre 1850 et 1870. Ce sport est une adaptation anglaise du jeu de paume. La première mise en jeu 'effectuant à quinze pieds, puis trente, puis quarante, d'où la façon particulière de compter les points dans le tennis moderne. Il semble que le premier tournoi de tennis eut lieu en août 1876 sur un court aménagé dans la propriété de M. William Appleton à Nahant dans le Massachusetts</p>          
+        </div>
     </div>
 </section>
 
@@ -65,14 +66,14 @@
     <h3>Quiz : Teste tes connaissances</h3>
     <p>Quel équipement permet de respirer sous l’eau ?</p>
 
-    <button onclick="checkAnswer('a')">Masque</button> 
+    <button onclick="checkAnswer('a')">Masque</button>
     <button onclick="checkAnswer('b')">Détendeur</button>
     <button onclick="checkAnswer('c')">Palmes</button>
 
     <p id="result"></p>
 </section>
 
-<script src="../Script/Plongée.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
