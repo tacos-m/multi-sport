@@ -54,6 +54,7 @@ button:active {
     width: 50%;
     border-radius: 10px;
     border-color: rgb(7, 96, 30);
+    float: left;
 }
 
 .intro {
