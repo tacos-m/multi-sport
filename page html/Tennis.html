@@ -9,9 +9,9 @@
 <body>
  
 <header>
-    <h2>Tennis</h2>
+    <button onclick="window.location.href='accueil.html'"><h2>🏠︎</h2></button>
+        <h1>Le tennis</h1>
     <nav>
-        <button onclick="window.location.href='accueil.html'"><h1>🏠︎</h1></button>
         <button class="active" onclick="window.location.href='Tennis.html'">Tennis</button>
         <button onclick="window.location.href='Plongée.html'">Plongée</button>
         <button onclick="window.location.href='Chess.html'">Echecs</button>
@@ -96,6 +96,11 @@
 <section class="container">
     <section id="joueurs">
         <div class="intro">
+            <div id="center">
+                <div id="sous-titre">
+                     <h3>Obtenez des informations sur les joueurs</h3>
+                </div>
+            </div>
 	        <div class="selectors">
       	        <div class="selector-group">
         	        <label for="joueur">Choisissez un joueur :</label>
@@ -139,7 +144,7 @@
  
 <!-- JEU -->
 <section class="jeu">
-    <p>A vous de jouer !</p>
+    <h2>A vous de jouer !</h2>
     <button onclick="openGamePopup()">Cliquez ici pour jouer</button>
 </section>
  
