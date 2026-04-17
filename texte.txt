@@ -24,10 +24,12 @@ Samedi 11 avril,
         Création du CSS sur la page de tennis ( couleurs de fond, titre, encadrées, photo alignées au texte ). C'était relativement long mais plutot facile pour le moment.
 Mercredi 15 avril, 
     Selma :
-<<<<<<< HEAD
         Création de la page Htlm plongé et Java scipt 
-=======
         Création de la page Htlm plongé et css
     Mathilde :
         Création des popup de la liste de selection J'ai eu beaucoup de mal pour réussir à programmer les popup. J'ai fini par réussir grâce à une video YouTube.
->>>>>>> 3f6ee139d225d236599e0709da52f49ea9e2fed7
+Vendredi 17 avril,
+    Santiago :
+        Implentation du jeu du jeu d'echec dans la plage html + création d'un jeu de tennis
+    Semlma :
+        Création d'un quizz et du logo 
