@@ -32,13 +32,7 @@ function closePopup() {
 function checkAnswer(answer) {
     let result = document.getElementById("result");
 
-    if (answer === "b") {
-        result.innerText = "✅ Bonne réponse !";
-    } else {
-        result.innerText = "❌ Mauvaise réponse";
-    }
-
-     if (answer === "a") {
+    if (answer === "b" || answer === "d") {
         result.innerText = "✅ Bonne réponse !";
     } else {
         result.innerText = "❌ Mauvaise réponse";
