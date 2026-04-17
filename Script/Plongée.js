@@ -37,4 +37,10 @@ function checkAnswer(answer) {
     } else {
         result.innerText = "❌ Mauvaise réponse";
     }
+
+     if (answer === "a") {
+        result.innerText = "✅ Bonne réponse !";
+    } else {
+        result.innerText = "❌ Mauvaise réponse";
+    }
 }
