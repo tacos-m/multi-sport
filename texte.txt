@@ -28,10 +28,12 @@ Mercredi 15 avril,
         Création de la page Htlm plongé et css
     Mathilde :
         Création des popup de la liste de selection J'ai eu beaucoup de mal pour réussir à programmer les popup. J'ai fini par réussir grâce à une video YouTube.
+    Santiago :
+        Recherche de chaque image a téléchager dans le ficher image
 Vendredi 17 avril,
     Santiago :
         Implentation du jeu du jeu d'echec dans la plage html + création d'un jeu de tennis
     Semlma :
-        Création d'un quizz et du logo 
+        Création d'un quizz et du logo sur canva 
     Mathilde : 
-        Mise en relation de toutes les pages entre elles via les boutons du haut
+        Mise en relation de toutes les pages entre elles via les boutons du haut + renomer tout les fichiers 
