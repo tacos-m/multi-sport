@@ -33,3 +33,5 @@ Vendredi 17 avril,
         Implentation du jeu du jeu d'echec dans la plage html + création d'un jeu de tennis
     Semlma :
         Création d'un quizz et du logo 
+    Mathilde : 
+        Mise en relation de toutes les pages entre elles via les boutons du haut
