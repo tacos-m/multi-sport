@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Page Echecs 1</title>
+    <title>Page Echecs</title>
     <link rel="stylesheet" href="../CSS/chess.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
 </head>
@@ -10,63 +10,210 @@
 <body>
 
 <header>
-    <h2> Les Echecs</h2>
+    <h2>Les Échecs</h2>
     <nav>
-        <button onclick="window.location.href='accueil.html'"><h1>🏠︎</h1></button>
+        <button onclick="window.location.href='accueil.html'">🏠︎</button>
         <button onclick="window.location.href='Tennis.html'">Tennis</button>
         <button onclick="window.location.href='Plongée.html'">Plongée</button>
-        <button class="active" onclick="window.location.href='Chess.html'">Echecs</button>
+        <button class="active" onclick="window.location.href='Chess.html'">Échecs</button>
     </nav>
 </header>
 
 <!-- INTRO -->
-<section class="container">     
+<section class="container">
     <img src="../images/jeu-chess.jpeg" alt="Plateau d'échec">
-
     <div class="intro">
         <h3>Découvrir le jeu d'échecs</h3>
         <p>
-Le jeu d’échec est un jeu ancestral qui tire ses origines de l’Inde. Inventer vers le III siècle. C’est un jeu de stratégie qui se joue au tour par tour, sur un plateau de 64 cases. Le but du jeu est de capturer le roi adverse. Bien que ce jeu peut sembler facile aux premiers abords, les nombreuses pièces et choix possibles rendent la partie bien plus complexe. Il existe plus de positions différentes que d’atomes dans l’univers. 
-</p>
+            Le jeu d'échec est un jeu ancestral qui tire ses origines de l'Inde. Inventé vers le III siècle.
+            C'est un jeu de stratégie qui se joue au tour par tour, sur un plateau de 64 cases. Le but du jeu
+            est de capturer le roi adverse. Bien que ce jeu peut sembler facile aux premiers abords, les
+            nombreuses pièces et choix possibles rendent la partie bien plus complexe. Il existe plus de
+            positions différentes que d'atomes dans l'univers.
+        </p>
     </div>
 </section>
- 
-<!-- BLOCS -->
+
+<!-- BLOCS ACCORDÉON -->
 <section class="blocks">
+
+    <!-- Grand noms -->
     <div class="block">
         <h4>Grand noms</h4>
-        <button onclick="openPopup('materiel')">Voir</button> 
+        <button class="voir-btn" onclick="toggleAccordion('materiel')">Voir</button>
+        <div class="accordion" id="accordion-materiel">
+            <div class="accordion-inner">
+                <h5>🏆 Les légendes des échecs</h5>
+                <div class="player-grid">
+                    <div class="player-card">
+                        <span class="player-icon">♚</span>
+                        <strong>Garry Kasparov</strong>
+                        <p>Champion du monde de 1985 à 2000, considéré comme l'un des plus grands joueurs de l'histoire.</p>
+                    </div>
+                    <div class="player-card">
+                        <span class="player-icon">♔</span>
+                        <strong>Bobby Fischer</strong>
+                        <p>Champion du monde 1972, génie américain légendaire dont le style reste une référence absolue.</p>
+                    </div>
+                    <div class="player-card">
+                        <span class="player-icon">♚</span>
+                        <strong>Magnus Carlsen</strong>
+                        <p>Champion du monde de 2013 à 2023, il détient le record du plus haut classement Elo jamais atteint.</p>
+                    </div>
+                    <div class="player-card">
+                        <span class="player-icon">♔</span>
+                        <strong>Anatoli Karpov</strong>
+                        <p>Champion du monde de 1975 à 1985, maître de la stratégie positionnelle et de l'endgame.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!-- Cadences -->
     <div class="block">
         <h4>Différentes cadences</h4>
-        <button onclick="openPopup('lieux')">Voir</button>
+        <button class="voir-btn" onclick="toggleAccordion('lieux')">Voir</button>
+        <div class="accordion" id="accordion-lieux">
+            <div class="accordion-inner">
+                <h5>⏱️ Les cadences de jeu</h5>
+                <div class="cadence-list">
+                    <div class="cadence-item">
+                        <span class="cadence-badge bullet">Bullet</span>
+                        <p>Moins de 3 minutes par joueur. Jeu ultra-rapide, idéal pour s'entraîner aux réflexes.</p>
+                    </div>
+                    <div class="cadence-item">
+                        <span class="cadence-badge blitz">Blitz</span>
+                        <p>3 à 5 minutes par joueur. Format populaire en compétition, équilibre vitesse et réflexion.</p>
+                    </div>
+                    <div class="cadence-item">
+                        <span class="cadence-badge rapid">Rapide</span>
+                        <p>10 à 60 minutes par joueur. Permet une réflexion plus approfondie tout en restant dynamique.</p>
+                    </div>
+                    <div class="cadence-item">
+                        <span class="cadence-badge classic">Classique</span>
+                        <p>Plus de 60 minutes par joueur. Cadence des tournois officiels FIDE, pour les parties sérieuses.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!-- Déplacements -->
     <div class="block">
         <h4>Les déplacements</h4>
-        <button onclick="openPopup('bienfaits')">Voir</button>
+        <button class="voir-btn" onclick="toggleAccordion('bienfaits')">Voir</button>
+        <div class="accordion" id="accordion-bienfaits">
+            <div class="accordion-inner">
+                <h5>♟️ Comment se déplacent les pièces ?</h5>
+                <div class="piece-list">
+                    <div class="piece-item">
+                        <span class="piece-symbol">♖</span>
+                        <div>
+                            <strong>La Tour</strong>
+                            <p>Se déplace en ligne droite, horizontalement ou verticalement, sur autant de cases que souhaité.</p>
+                        </div>
+                    </div>
+                    <div class="piece-item">
+                        <span class="piece-symbol">♗</span>
+                        <div>
+                            <strong>Le Fou</strong>
+                            <p>Se déplace en diagonale sur autant de cases que souhaité. Reste toujours sur la même couleur.</p>
+                        </div>
+                    </div>
+                    <div class="piece-item">
+                        <span class="piece-symbol">♘</span>
+                        <div>
+                            <strong>Le Cavalier</strong>
+                            <p>Se déplace en L : 2 cases dans une direction puis 1 case perpendiculairement. Peut sauter par-dessus les pièces.</p>
+                        </div>
+                    </div>
+                    <div class="piece-item">
+                        <span class="piece-symbol">♕</span>
+                        <div>
+                            <strong>La Dame</strong>
+                            <p>Pièce la plus puissante : combine les mouvements de la tour et du fou. Se déplace dans toutes les directions.</p>
+                        </div>
+                    </div>
+                    <div class="piece-item">
+                        <span class="piece-symbol">♔</span>
+                        <div>
+                            <strong>Le Roi</strong>
+                            <p>Se déplace d'une seule case dans n'importe quelle direction. Pièce à protéger absolument !</p>
+                        </div>
+                    </div>
+                    <div class="piece-item">
+                        <span class="piece-symbol">♙</span>
+                        <div>
+                            <strong>Le Pion</strong>
+                            <p>Avance d'une case (ou deux au premier coup). Capture en diagonale. Peut se promouvoir en atteignant le bout du plateau.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!-- Conseils -->
     <div class="block">
         <h4>Conseils</h4>
-        <button onclick="openPopup('niveaux')">Voir</button>
+        <button class="voir-btn" onclick="toggleAccordion('niveaux')">Voir</button>
+        <div class="accordion" id="accordion-niveaux">
+            <div class="accordion-inner">
+                <h5>💡 Conseils pour progresser</h5>
+                <div class="tips-list">
+                    <div class="tip-item">
+                        <span class="tip-num">1</span>
+                        <div>
+                            <strong>Contrôlez le centre</strong>
+                            <p>Placez vos pions et pièces sur les cases centrales (e4, e5, d4, d5) dès l'ouverture.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <span class="tip-num">2</span>
+                        <div>
+                            <strong>Développez vos pièces</strong>
+                            <p>Sortez vos cavaliers et fous rapidement avant de roquer pour mettre votre roi en sécurité.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <span class="tip-num">3</span>
+                        <div>
+                            <strong>Pensez avant d'agir</strong>
+                            <p>Avant chaque coup, demandez-vous : "Que menace mon adversaire ? Quel est mon meilleur coup ?"</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <span class="tip-num">4</span>
+                        <div>
+                            <strong>Ne sacrifiez pas sans raison</strong>
+                            <p>Chaque pièce a une valeur. Évitez les échanges désavantageux sauf si vous avez une compensation claire.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <span class="tip-num">5</span>
+                        <div>
+                            <strong>Analysez vos parties</strong>
+                            <p>Après chaque partie, relisez vos coups pour comprendre vos erreurs et progresser durablement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
 </section>
 
-<!-- POPUP -->
-<div id="popup" class="popup">
-    <p id="popupText"></p>
-    <button onclick="closePopup()">Fermer</button>
-</div>
-
+<!-- JEU D'ÉCHECS -->
 <div class="chess-section">
-  <div class="chess-label">
-    <span>♟ Jouer aux échecs</span>
-  </div>
-  <div id="chess-container"></div>
+    <div class="chess-label">
+        <span>♟ Jouer aux échecs</span>
+    </div>
+    <div id="chess-container"></div>
 </div>
 
+<!-- accordion.js DOIT être chargé avant chess.js -->
+<script src="../Script/ouverture_chess.js"></script>
 <script src="../Script/chess.js"></script>
 
 </body>

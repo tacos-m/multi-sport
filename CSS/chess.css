@@ -1,131 +1,341 @@
+/* ============================================================
+   chess.css — Styles de la page Échecs
+   Lié à : Chess.html
+   ============================================================ */
+
+/* ---------- Variables ---------- */
+:root {
+  --brun-fonce:  #512c03;
+  --brun-header: #6d3707;
+  --brun-accent: #854906;
+  --ambre:       #e08c2b;
+  --ambre-light: #f0a83a;
+  --texte-clair: #f3f3f3;
+}
+
+/* ---------- Reset / Base ---------- */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #512c03;
+  font-family: 'Georgia', serif;
+  margin: 0;
+  background-color: var(--brun-fonce);
+  color: var(--texte-clair);
+  padding-bottom: 30px;
 }
 
-/* HEADER */
+/* ---------- HEADER ---------- */
 header {
-    background-color: #6d3707;
-    color: rgb(243, 243, 243);
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
+  background-color: var(--brun-header);
+  color: var(--texte-clair);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.4);
 }
 
+header h2 {
+  margin: 0;
+}
 
- button {
-    padding: 10px 16px;
-    margin: 5px;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.25s ease;
-    background: white;
-    color: #8f2a2a84;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+header nav {
+  display: flex;
+  gap: 5px;
+}
+
+/* ---------- BOUTONS GLOBAUX ---------- */
+button {
+  padding: 10px 16px;
+  margin: 5px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.25s ease;
+  background: white;
+  color: var(--brun-accent);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  font-family: inherit;
 }
 
 button:hover {
-    transform: translateY(-3px);
-    background: #7a480790;
-    color: white;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+  transform: translateY(-3px);
+  background: var(--brun-accent);
+  color: white;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
 }
 
 button:active {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
 
-.active {
-    background-color: #854906;
-    color: white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+button.active {
+  background-color: var(--brun-accent);
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* INTRO */
+/* ---------- INTRO ---------- */
 .container {
-    display: flex;
-    padding: 20px;
+  display: flex;
+  padding: 20px;
+  gap: 20px;
 }
 
 .container img {
-    width: 50%;
-    border-radius: 10px;
+  width: 50%;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
 .intro {
-    background-color: #e08c2bc0;
-    padding: 20px;
-    margin-left: 20px;
-    border-radius: 10px;
+  background-color: rgba(224, 140, 43, 0.75);
+  padding: 20px;
+  border-radius: 10px;
+  line-height: 1.7;
 }
 
-/* BLOCS */
+.intro h3 {
+  margin-top: 0;
+}
+
+/* ---------- BLOCS ---------- */
 .blocks {
-    display: flex;
-    justify-content: space-around;
-    margin: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px;
+  gap: 10px;
+  align-items: flex-start;
 }
 
 .block {
-    background-color: #e08c2bc0;
-    padding: 15px;
-    width: 20%;
-    text-align: center;
-    border-radius: 10px;
+  background-color: rgba(224, 140, 43, 0.75);
+  padding: 15px;
+  width: 20%;
+  min-width: 180px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
 }
 
-.block button {
-    margin-top: 10px;
-    padding: 8px;
+.block:hover {
+  transform: translateY(-2px);
 }
 
-/* POPUP */
-.popup {
-    display: none;
-    position: fixed;
-    top: 25%;
-    left: 30%;
-    width: 40%;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    border: 2px solid black;
+.block h4 {
+  margin: 0 0 12px 0;
+  font-size: 1.05rem;
 }
 
+/* Bouton "Voir" / "Fermer" */
+.voir-btn {
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+}
 
+.voir-btn.active-btn {
+  background-color: var(--brun-fonce);
+  color: var(--ambre-light);
+}
 
+/* ---------- ACCORDÉON ---------- */
+.accordion {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease, opacity 0.35s ease;
+  opacity: 0;
+  margin-top: 0;
+}
+
+.accordion.open {
+  opacity: 1;
+  /* max-height géré dynamiquement en JS */
+}
+
+.accordion-inner {
+  background: rgba(255, 255, 255, 0.95);
+  color: #2c1a00;
+  border-radius: 0 0 10px 10px;
+  padding: 18px 20px;
+  text-align: left;
+  margin-top: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.accordion-inner h5 {
+  margin: 0 0 14px 0;
+  font-size: 1rem;
+  color: var(--brun-accent);
+  border-bottom: 2px solid var(--ambre);
+  padding-bottom: 8px;
+}
+
+/* --- Grand noms : grille de joueurs --- */
+.player-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.player-card {
+  background: rgba(224, 140, 43, 0.15);
+  border-left: 4px solid var(--ambre);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.player-card .player-icon {
+  font-size: 1.6rem;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.player-card strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--brun-accent);
+}
+
+.player-card p {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+/* --- Cadences --- */
+.cadence-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cadence-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.cadence-badge {
+  display: inline-block;
+  min-width: 70px;
+  text-align: center;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.78rem;
+  flex-shrink: 0;
+  color: white;
+}
+
+.cadence-badge.bullet  { background: #c0392b; }
+.cadence-badge.blitz   { background: #e67e22; }
+.cadence-badge.rapid   { background: #27ae60; }
+.cadence-badge.classic { background: #2980b9; }
+
+.cadence-item p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* --- Déplacements des pièces --- */
+.piece-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.piece-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 8px;
+  border-radius: 8px;
+  background: rgba(224, 140, 43, 0.1);
+}
+
+.piece-symbol {
+  font-size: 2rem;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 36px;
+  text-align: center;
+}
+
+.piece-item strong {
+  display: block;
+  color: var(--brun-accent);
+  margin-bottom: 2px;
+}
+
+.piece-item p {
+  margin: 0;
+  font-size: 0.83rem;
+  line-height: 1.5;
+}
+
+/* --- Conseils --- */
+.tips-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tip-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.tip-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--brun-accent);
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.tip-item strong {
+  display: block;
+  color: var(--brun-accent);
+  margin-bottom: 2px;
+}
+
+.tip-item p {
+  margin: 0;
+  font-size: 0.83rem;
+  line-height: 1.5;
+}
+
+/* ---------- SECTION JEU D'ÉCHECS ---------- */
 .chess-section {
   margin: 30px auto;
   width: fit-content;
 }
 
 .chess-label {
-  background-color: #6d3707;
+  background-color: var(--brun-header);
   color: white;
   text-align: center;
   padding: 10px 20px;
   border-radius: 10px 10px 0 0;
   font-size: 18px;
   font-weight: bold;
-  border-bottom: 3px solid #854906;
+  border-bottom: 3px solid var(--brun-accent);
 }
 
 #chess-container {
   display: flex;
   justify-content: center;
   position: relative;
-}
-
-body {
-  padding-bottom: 20px;
-}
-
-.chess-section {
-  margin-bottom: 20px;
-}
-#chess-container {
   overflow: hidden;
 }

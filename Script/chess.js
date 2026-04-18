@@ -1,78 +1,64 @@
-// variable d'agrandissement
+/* ============================================================
+   chess.js — Jeu d'échecs (p5.js)
+   Lié à : Chess.html  |  Styles dans : chess.css
+   ============================================================ */
+
 let a = 1;
 let temps = 3;
 let carre = 50 * a;
 let selec = 0;
-let button;
-let posiX;
-let posiY;
-let posiQ;
-let posiZ;
+let button, button2;
+let posiX, posiY, posiQ, posiZ;
 let tourB = 2;
 let vieB = true;
 let vieN = true;
 let rtb = false;
 let rtn = false;
-let minB = temps-1 ;
-let minN = temps -1;
+let minB = temps - 1;
+let minN = temps - 1;
 let timeB = 59;
 let timeN = 59;
 let start = false;
 let lien;
 let colorR = "white";
 let couleurT = ["red", "blue", "white", "green", "black", "pink", "violet"];
-let mySound;
 
-///////////////////////////////////////////////////////////////////// Matrix
-
+/* ---------- Matrice initiale ---------- */
 var matrix = [
-  ["♜", "♞", "♝", "♛", "♚", "♝", "♞", "♜"],
-  ["♟", "♟", "♟", "♟", "♟", "♟", "♟", "♟"],
-  ["", "", "", "", "", "", "", ""],
-  ["", "", "", "", "", "", "", ""],
-  ["", "", "", "", "", "", "", ""],
-  ["", "", "", "", "", "", "", ""],
-  ["♙", "♙", "♙", "♙", "♙", "♙", "♙", "♙"],
-  ["♖", "♘", "♗", "♕", "♔", "♗", "♘", "♖"],
+  ["♜","♞","♝","♛","♚","♝","♞","♜"],
+  ["♟","♟","♟","♟","♟","♟","♟","♟"],
+  ["","","","","","","",""],
+  ["","","","","","","",""],
+  ["","","","","","","",""],
+  ["","","","","","","",""],
+  ["♙","♙","♙","♙","♙","♙","♙","♙"],
+  ["♖","♘","♗","♕","♔","♗","♘","♖"],
 ];
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// SETUP
-
-
-
-
-
-
-
-
+/* ============================================================
+   SETUP
+   ============================================================ */
 function setup() {
   let monCanvas = createCanvas(600 * a, 400 * a);
-monCanvas.parent('chess-container');
-//////////////////////////////////////////////////////////////////////////////////////////.    ma musioqeu addell Skyffal 
-  
- 
-  
-  
-  
-  ////////////////////////////////////////////////////////////////////////////////////////// affichage du bouton recommencer
- button = createButton("Recommencer");
-button.parent('chess-container');  // ← ajoute ça
+  monCanvas.parent('chess-container');
 
-button2 = createButton("rock");
-button2.parent('chess-container');  // ← ajoute ça
+  button = createButton("Recommencer");
+  button.parent('chess-container');
 
-lien = createA("...", "Règles du jeu d'échec ©️Lux", "_blank");
-lien.parent('chess-container');
+  button2 = createButton("Roquer");
+  button2.parent('chess-container');
 
-  
+  lien = createA("https://www.chess.com/fr/apprendre-les-echecs/les-regles-des-echecs", "Règles du jeu d'échecs", "_blank");
+  lien.parent('chess-container');
 }
-//////////////////////////////////// dessiner l'échiquier
+
+/* ============================================================
+   Dessiner l'échiquier
+   ============================================================ */
 function dessinEchiquier() {
   for (let j = 0; j < 8; j++) {
-    for (var i = 0; i < 8; i++) {
-      if (i % 2 == 0 && j % 2 == 0) {
-        fill("SaddleBrown");
-      } else if (i % 2 != 0 && j % 2 != 0) {
+    for (let i = 0; i < 8; i++) {
+      if ((i % 2 === 0 && j % 2 === 0) || (i % 2 !== 0 && j % 2 !== 0)) {
         fill("SaddleBrown");
       } else {
         fill("Goldenrod");
@@ -82,39 +68,33 @@ function dessinEchiquier() {
   }
 }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  Draw
-
+/* ============================================================
+   DRAW
+   ============================================================ */
 function draw() {
   background("Goldenrod");
 
-  
-  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// code popur demarer le jeu
+  /* Démarrer le jeu avec la touche S */
   if (keyCode === 83) {
     start = true;
   }
 
-  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// si le jeu est lancer
-  if (start == true) {
-    ////////////////////////////////////////////////////////////////////////////////////////// pendule blanche
+  if (start === true) {
 
-    if (minB > -1 && tourB % 2 == 0 && vieB == true && vieN == true) {
-      
-      if (frameCount % 60 == 0) {
+    /* --- Pendule blanche --- */
+    if (minB > -1 && tourB % 2 === 0 && vieB === true && vieN === true) {
+      if (frameCount % 60 === 0) {
         timeB--;
-        if (timeB == -1) {
-          timeB = 59;
-          minB--;
-        }
+        if (timeB === -1) { timeB = 59; minB--; }
       }
-
       textSize(50 * a);
       fill("white");
       text(minB + " : " + timeB, 450 * a, 350 * a);
-    } else if (minB > -1 && tourB % 2 != 0) {
+    } else if (minB > -1 && tourB % 2 !== 0) {
       textSize(50 * a);
       fill("black");
       text(minB + " : " + timeB, 450 * a, 350 * a);
-    } else if (minB > -1 && tourB % 2 == 0 && vieB == false) {
+    } else if (minB > -1 && tourB % 2 === 0 && vieB === false) {
       textSize(50 * a);
       fill("black");
       text(minB + " : " + timeB, 450 * a, 350 * a);
@@ -124,176 +104,146 @@ function draw() {
       vieB = false;
       textSize(50 * a);
       fill("black");
-      text( "0 : 0" , 450 * a, 350 * a);
+      text("0 : 0", 450 * a, 350 * a);
     }
- 
-    ////////////////////////////////////////////////////////////////////////////////////////// pendule Noire
-    if (minN > -1 && tourB % 2 != 0 && vieN == true && vieB == true) {
-    
 
-      if (frameCount % 60 == 0) {
+    /* --- Pendule noire --- */
+    if (minN > -1 && tourB % 2 !== 0 && vieN === true && vieB === true) {
+      if (frameCount % 60 === 0) {
         timeN--;
-        if (timeN == -1) {
-          timeN = 59;
-          minN--;
-        }
+        if (timeN === -1) { timeN = 59; minN--; }
       }
-
       textSize(50 * a);
       fill("white");
       text(minN + " : " + timeN, 450 * a, 75 * a);
-    } else if (minN > -1 && tourB % 2 == 0) {
+    } else if (minN > -1 && tourB % 2 === 0) {
       textSize(50 * a);
       fill("black");
       text(minN + " : " + timeN, 450 * a, 75 * a);
-    } else if (minN > -1 && tourB%2 !=0 && vieN == false) {
+    } else if (minN > -1 && tourB % 2 !== 0 && vieN === false) {
       textSize(50 * a);
       fill("black");
       text(minN + " : " + timeN, 450 * a, 100 * a);
     }
 
-    if (minN <= -1 ) {
+    if (minN <= -1) {
       vieN = false;
       fill("black");
-      text("0 : 0" , 450 * a, 100 * a);
+      text("0 : 0", 450 * a, 100 * a);
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////// Dessiner l'échiquier
-
+    /* --- Échiquier --- */
     dessinEchiquier();
 
-    ////////////////////////////////////////////////////////////////////////////////////////// afficher les bouton si commencer
-    if (start == true) {
-      ///////////////////////////////////////////////////////////////////////////////////////// bouton recommencer
-      button.position(465 * a, 230 * a);
-      button.mousePressed(restart);
+    /* --- Boutons --- */
+    button.position(465 * a, 230 * a);
+    button.mousePressed(restart);
 
-      ////////////////////////////////////////////////////////////////////////////////////////// bouton rook
-      button2.position(480 * a, 180 * a);
-      button2.mousePressed(rock);
-    }
+    button2.position(480 * a, 180 * a);
+    button2.mousePressed(rock);
 
-    ////////////////////////////////////////////////////////////////////////////////////////// bouger le lien or de l'écran
-    lien.position(1000000 * a, 10000000 * a);
+    /* --- Lien hors écran --- */
+    lien.position(1000000, 1000000);
 
-    ////////////////////////////////////////////////////////////////////////////////////////// vie du roi blanc
+    /* --- Vérification vie du roi blanc --- */
     rtb = false;
+    for (let y = 0; y < matrix.length; y++) {
+      for (let x = 0; x < matrix[y].length; x++) {
+        if (matrix[y][x] === "♔") { rtb = true; }
+      }
+    }
+    if (rtb !== true) { vieB = false; }
+
+    /* --- Vérification vie du roi noir --- */
     rtn = false;
-
     for (let y = 0; y < matrix.length; y++) {
       for (let x = 0; x < matrix[y].length; x++) {
-        if (matrix[y][x] == "♔") {
-          rtb = true;
-        }
+        if (matrix[y][x] === "♚") { rtn = true; }
       }
     }
+    if (rtn !== true) { vieN = false; }
 
-    if (rtb != true) {
-      vieB = false;
-    }
-
-    ////////////////////////////////////////////////////////////////////////////////////////// vie du roi noire
+    /* --- Affichage des pièces --- */
     for (let y = 0; y < matrix.length; y++) {
       for (let x = 0; x < matrix[y].length; x++) {
-        if (matrix[y][x] == "♚") {
-          rtn = true;
-        }
-      }
-    }
-
-    if (rtn != true) {
-      vieN = false;
-    }
-
-    ////////////////////////////////////////////////////////////////////////////////////////// Afficher les pièces sur la grille
-    for (var y = 0; y < matrix.length; y++) {
-      for (var x = 0; x < matrix[y].length; x++) {
         textSize(50 * a);
         fill("black");
-        text(matrix[y][x], (1 / 8 + x) * (50 * a), (0.8 + y) * (50 * a));
+        text(matrix[y][x], (1/8 + x) * (50 * a), (0.8 + y) * (50 * a));
       }
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////// ecran de victoire si noire gagne
-    if (vieB != true && vieN == true) {
+    /* --- Écrans de victoire --- */
+    if (vieB !== true && vieN === true) {
       fill("white");
-      textSize(15*a);
-      text("Les noirs on gagné !!", 440 * a, 170 * a);
+      textSize(15 * a);
+      text("Les noirs ont gagné !!", 440 * a, 170 * a);
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////// ecran de victoire si les blanc gagne
-    if (vieB == true && vieN != true) {
-      //fill("black");
-      //rect(0, 0, 400 * a, 400 * a);
+    if (vieB === true && vieN !== true) {
       fill("white");
-      textSize(15*a);
-      text("Les blancs on gagné !!", 440 * a, 170 * a);
+      textSize(15 * a);
+      text("Les blancs ont gagné !!", 440 * a, 170 * a);
     }
-  }
-  ////////////////////////////////////////////////////////////////////////////////////////// ecran de début
-  else  {
-    ////////////////////////////////////////////////////////////////////////////////////////// mettre les bouton ors de l'ecran avant le début de la partie
-    button.position(1000000 * a, 1000000 * a);
-    button2.position(1000000 * a, 1000000 * a);
 
-    if (frameCount % 30 == 0) {
+  } else {
+    /* --- Écran de démarrage --- */
+    button.position(1000000, 1000000);
+    button2.position(1000000, 1000000);
+
+    if (frameCount % 30 === 0) {
       colorR = random(couleurT);
     }
 
     fill("white");
     textSize(25 * a);
-    text("Welcome !!!", width / 3 + 30 * a, height / 8);
+    text("Bienvenue !", width / 3 + 30 * a, height / 8);
+
     textSize(10 * a);
     text(
-      "Voici un jeu d'echec a 2 joueurs, vous pourez retrouver l'ensemble des règles dans le lien ci dessous : ",
-      20 * a,
-      height / 8 + 40 * a
+      "Jeu d'échecs à 2 joueurs. Retrouvez les règles complètes dans le lien ci-dessous.",
+      20 * a, height / 8 + 40 * a
     );
 
     lien.position(20 * a, height / 8 + 65 * a);
+
     text(
-      "Vous avez aussi un temps limité pour jouer votre partie : 3 minutes par joueurs, attention a ne pas dépasser !",
-      20 * a,
-      height / 8 + 120 * a
+      "Temps limité : " + temps + " minutes par joueur. Attention à la pendule !",
+      20 * a, height / 8 + 120 * a
     );
     text(
-      "un bouton recommencer est a votre disposition si besoin (ou en cas de beug). ",
-      20 * a,
-      height / 8 + 160 * a
+      "Un bouton Recommencer est disponible en cas de besoin.",
+      20 * a, height / 8 + 160 * a
     );
     text(
-      "Pièce touché = pièces a joueur, impossible de revenir sur sa case si une pièce est sellectionner !",
-      20 * a,
-      height / 8 + 200 * a
+      "Pièce touchée = pièce jouée. Impossible de revenir en arrière après sélection !",
+      20 * a, height / 8 + 200 * a
     );
     text(
-      "Si vous avez tout compris, bonne partie.",
-      20 * a,
-      height / 8 + 240 * a
+      "Bonne partie !",
+      20 * a, height / 8 + 240 * a
     );
+
     textSize(20 * a);
     fill(colorR);
-    text("Appuyer sur S pour commencer ", width / 4, height / 8 + 300 * a);
+    text("Appuyez sur S pour commencer", width / 4, height / 8 + 300 * a);
   }
 }
 
-////////////////////////////////////////////////////////////////////////////////////////// pouvoir suivre la soouris du joueur
+/* ============================================================
+   Gestion des clics souris
+   ============================================================ */
 function mousePressed() {
-  if (mouseX < 400 * a && start == true) {
-    if (selec == 0 && vieB == true && vieN == true) {
+  if (mouseX < 400 * a && start === true) {
+    if (selec === 0 && vieB === true && vieN === true) {
       posiX = Math.floor(mouseX / carre);
       posiY = Math.floor(mouseY / carre);
-
-      //console.log(matrix[posiY][posiX]);
     }
 
-    if (selec == 1 && vieB == true && vieN == true) {
+    if (selec === 1 && vieB === true && vieN === true) {
       posiZ = Math.floor(mouseX / carre);
       posiQ = Math.floor(mouseY / carre);
       matrix[posiQ][posiZ] = matrix[posiY][posiX];
       matrix[posiY][posiX] = "";
-
-      //console.log(matrix[posiQ][posiZ]);
       selec -= 2;
       tourB++;
     }
@@ -302,50 +252,33 @@ function mousePressed() {
   }
 }
 
-////////////////////////////////////////////////////////////////////////////////////////// fonctionnement du bouton recommencer
-
+/* ============================================================
+   Bouton Recommencer
+   ============================================================ */
 function restart() {
   matrix = [
-    ["♜", "♞", "♝", "♛", "♚", "♝", "♞", "♜"],
-    ["♟", "♟", "♟", "♟", "♟", "♟", "♟", "♟"],
-    ["", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", ""],
-    ["♙", "♙", "♙", "♙", "♙", "♙", "♙", "♙"],
-    ["♖", "♘", "♗", "♕", "♔", "♗", "♘", "♖"],
+    ["♜","♞","♝","♛","♚","♝","♞","♜"],
+    ["♟","♟","♟","♟","♟","♟","♟","♟"],
+    ["","","","","","","",""],
+    ["","","","","","","",""],
+    ["","","","","","","",""],
+    ["","","","","","","",""],
+    ["♙","♙","♙","♙","♙","♙","♙","♙"],
+    ["♖","♘","♗","♕","♔","♗","♘","♖"],
   ];
   selec = 0;
-  vieB = true;
-  vieN = true;
-  minB = temps - 1;
+  vieB  = true;
+  vieN  = true;
+  minB  = temps - 1;
+  minN  = temps - 1;
   tourB = 2;
-  minN = temps - 1;
   timeB = 59;
   timeN = 59;
 }
 
-//////////////////////////////////////////////////////////////////////////////////////// fonctionnement du bouton rock
+/* ============================================================
+   Bouton Roquer (passer son tour)
+   ============================================================ */
 function rock() {
   tourB++;
 }
-
-
-
-
-/////////////////////////////////////////// teste de selection des couleur 
-
-
-/////////////////////////////////////////// blanc 
-
-
-
-
-
-
-
-
-
-
-
-
