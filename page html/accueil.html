@@ -1,78 +1,106 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>MultiSport</title>
-    <link rel="stylesheet" href="../CSS/accueil.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MultiSport</title>
+  <link rel="stylesheet" href="../CSS/accueil.css" />
 </head>
-
 <body>
 
-<header>
-    <h2> Accueil</h2> 
-    <nav>
-        <button class="active"onclick="window.location.href='accueil.html'"><h1>🏠︎</h1></button>
-        <button onclick="window.location.href='Tennis.html'">Tennis</button>
-        <button onclick="window.location.href='Plongée.html'">Plongée</button>
-        <button onclick="window.location.href='Chess.html'">Echecs</button>
+  <header class="hero">
+    <div class="hero-left">
+      <div class="logo-placeholder" id="logo-area">
+        <img src="../images/logo.png" alt="plongée">
+      </div>
+    </div>
+    <div class="hero-title">
+      <h1>MultiSport</h1>
+      <p class="hero-subtitle">Découvrez le monde du sport sous toutes ses formes</p>
+    </div>
+    <nav class="hero-nav">
+      <a href="../page html/Tennis.html" class="nav-link">Tennis</a>
+      <a href="../page html/Plongée.html" class="nav-link">Plongée</a>
+      <a href="../page html/Chess.html" class="nav-link">Échecs</a>
     </nav>
-</header>
+  </header>
 
-<!-- INTRO -->
-<section class="container">
-    <img src="../images/logo.png" alt="plongée">
+  <main>
 
-    <div class="intro">
-        <h3>Découvrir la plongée</h3>
+    <section class="intro-section">
+      <div class="intro-text">
+        <h2>À propos du projet</h2>
         <p>
-            La plongée sous-marine permet d’explorer les fonds marins,
-            observer des espèces uniques et vivre une expérience exceptionnelle. Venez découvrir tout cela à travers cette page.
+          Bienvenue sur <strong>MultiSport</strong>, un site créé dans le cadre d'un projet NSI.
+          Notre objectif est de vous faire découvrir trois disciplines très différentes : le tennis,
+          la plongée sous-marine et les échecs. Chaque sport possède des règles et des techniques ainsi qu'une histoire unique.
         </p>
+        <p>
+          Bonne visite !
+        </p>
+      </div>
+      <div class="team-photo">
+        <div class="photo-placeholder" id="team-photo-area">
+          <img src="../images/equipe_independante.jpeg" alt="equipe">
+        </div>
+      </div>
+    </section>
+
+    <section class="sports-section">
+      <h2 class="section-title">Nos sports</h2>
+      <div class="cards-grid">
+
+        <div class="sport-card" id="tennis">
+          <div class="card-icon tennis-icon">🎾</div>
+          <h3>Tennis</h3>
+          <p>Règles, techniques et histoire du tennis. Découvrez ce sport de raquette passionnant.</p>
+          <button class="decouvrir-btn" onclick="window.location.href='Tennis.html'">Découvrir →</button>
+        </div>
+
+        <div class="sport-card" id="plongee">
+          <div class="card-icon plongee-icon">🤿</div>
+          <h3>Plongée</h3>
+          <p>Explorez les fonds marins et la technique. Un voyage fascinant sous les océans.</p>
+          <button class="decouvrir-btn" onclick="window.location.href='Plongée.html'">Découvrir →</button>
+        </div>
+
+        <div class="sport-card" id="echecs">
+          <div class="card-icon echecs-icon">♟️</div>
+          <h3>Échecs</h3>
+          <p>Stratégie, ouvertures et règles du jeu. Le sport de l'esprit par excellence.</p>
+          <button class="decouvrir-btn" onclick="window.location.href='Chess.html'">Découvrir →</button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-col">
+        <h4>MultiSport</h4>
+        <p>Projet NSI — 1ère</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#tennis">Tennis</a></li>
+          <li><a href="#plongee">Plongée</a></li>
+          <li><a href="#echecs">Échecs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Crédits &amp; Informations</h4>
+        <p>Site réalisé par :<br/>
+          <strong>Selma Attar</strong>, <strong>Mathilde Châtellier</strong>, <strong>Santiago Thiéry</strong>
+        </p>
+        <p>Année scolaire 2025–2026<br/>Lycée Notre Dame de la Providence</p>
+      </div>
     </div>
-</section>
-
-<!-- BLOCS -->
-<section class="blocks">
-    <div class="block">
-        <h4>Matériel</h4>
-        <button onclick="openPopup('materiel')">Voir</button>
+    <div class="footer-bottom">
+      <p>© 2025 MultiSport — Projet NSI</p>
     </div>
-
-    <div class="block">
-        <h4>Lieux</h4>
-        <button onclick="openPopup('lieux')">Voir</button>
-    </div>
-
-    <div class="block">
-        <h4>Bienfaits</h4>
-        <button onclick="openPopup('bienfaits')">Voir</button>
-    </div>
-
-    <div class="block">
-        <h4>Niveaux</h4>
-        <button onclick="openPopup('niveaux')">Voir</button>
-    </div>
-</section>
-
-<!-- POPUP -->
-<div id="popup" class="popup">
-    <p id="popupText"></p>
-    <button onclick="closePopup()">Fermer</button>
-</div>
-
-<!-- QUIZ -->
-<section class="quiz">
-    <h3>Quiz : Teste tes connaissances</h3>
-    <p>Quel équipement permet de respirer sous l’eau ?</p>
-
-    <button onclick="checkAnswer('a')">Masque</button> 
-    <button onclick="checkAnswer('b')">Détendeur</button>
-    <button onclick="checkAnswer('c')">Palmes</button>
-
-    <p id="result"></p>
-</section>
-
-<script src="../Script/accueil.js"></script>
-
+  </footer>
 </body>
 </html>
