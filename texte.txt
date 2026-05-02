@@ -27,13 +27,31 @@ Mercredi 15 avril,
         Création de la page Htlm plongé et Java scipt 
         Création de la page Htlm plongé et css
     Mathilde :
-        Création des popup de la liste de selection J'ai eu beaucoup de mal pour réussir à programmer les popup. J'ai fini par réussir grâce à une video YouTube.
+        Création des popups de la liste de selection J'ai eu beaucoup de mal pour réussir à programmer les popup. J'ai fini par réussir grâce à une video YouTube.
     Santiago :
         Recherche de chaque image a téléchager dans le ficher image
 Vendredi 17 avril,
     Santiago :
         Implentation du jeu du jeu d'echec dans la plage html + création d'un jeu de tennis
-    Semlma :
+    Selma :
         Création d'un quizz et du logo sur canva 
     Mathilde : 
-        Mise en relation de toutes les pages entre elles via les boutons du haut + renomer tout les fichiers 
+        Mise en relation de toutes les pages entre elles via les boutons du haut + renomer tous les fichiers
+Mardi 21 avril,
+    Santigo : 
+        Création des 2 premiers block "Grands noms" et "différetes cadences"
+    Mathilde : 
+        Début création de la page d'accueil (titre, présentation du sujet et les trois blocks de chaque sports), liée à toutes les autres pages
+        Mise en popup du jeu de tennis : c'était compliqué mais au final j'ai réussi
+Vendredi 24 avril, 
+    Santigo : 
+        Création des 2 derniers block "Les déplacements" et "conseils"
+Dimanche 26 avril, 
+    Selma : 
+        Insertion du logo dans la page d'accueil ainsi que la photo de groupe 
+Lundi 27 avril, 
+    Mathilde : 
+        Footer de la page d'acceuil (les informations)
+Mercredi 29 avril, 
+    Selma : 
+        Modifications esthétiques du footer de la page d'acceuil et de la page en général

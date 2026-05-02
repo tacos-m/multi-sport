@@ -119,16 +119,6 @@ function fermerPopup() {
 
 closeBtn.addEventListener("click", fermerPopup);
 
-// Fermer en cliquant en dehors du popup
-overlay.addEventListener("click", function(e) {
-  if (e.target === overlay) fermerPopup();
-});
-
-// Fermer avec la touche Échap
-document.addEventListener("keydown", function(e) {
-  if (e.key === "Escape") fermerPopup();
-});
-
 // ===== ÉCOUTEURS DES SELECTS =====
 document.getElementById("joueur").addEventListener("change", function() {
   const val = this.value;
@@ -143,3 +133,105 @@ document.getElementById("joueuse").addEventListener("change", function() {
     afficherPopup(joueuses[val]);
   }
 });
+
+/* JEU POPUP */
+let gameSketch = null;
+ 
+function openGamePopup() {
+    document.getElementById('game-overlay').classList.remove('hidden');
+ 
+    if (!gameSketch) {
+        gameSketch = new p5(function(p) {
+            let x, y, vx, vy, r;
+            let paddleX, paddleY, paddleW, paddleH;
+            let gameOver = false;
+            let paddleSpeed = 5;
+ 
+            p.setup = function() {
+                let canvas = p.createCanvas(500, 300);
+                canvas.parent('game-canvas-container');
+                r = 10;
+                x = 250; y = 150;
+                vx = -6; vy = 5;
+                paddleW = 6; paddleH = 60;
+                paddleX = 2;
+                paddleY = 150 - paddleH / 2;
+            };
+ 
+            p.draw = function() {
+                drawBackground();
+                if (gameOver) {
+                    drawPaddle();
+                    p.textAlign(p.CENTER, p.CENTER);
+                    p.textSize(28);
+                    p.fill(255);
+                    p.text("GAME OVER", p.width / 2, p.height / 2);
+                    p.textSize(16);
+                    p.text("Appuie sur ESPACE pour rejouer", p.width / 2, p.height / 2 + 40);
+                    return;
+                }
+                if (p.keyIsDown(p.UP_ARROW))   paddleY -= paddleSpeed;
+                if (p.keyIsDown(p.DOWN_ARROW)) paddleY += paddleSpeed;
+                paddleY = p.constrain(paddleY, 31, 270 - paddleH);
+                x += vx; y += vy;
+                if (y - r <= 31)  { vy *= -1; y = r + 31; }
+                if (y + r >= 270) { vy *= -1; y = 270 - r; }
+                if (x + r >= 498) { vx *= -1; x = 498 - r; }
+                if (vx < 0 && x - r <= paddleX + paddleW && x - r >= paddleX && y >= paddleY && y <= paddleY + paddleH) {
+                    vx *= -1;
+                    x = paddleX + paddleW + r;
+                    let hitPos = (y - paddleY) / paddleH;
+                    vy = (hitPos - 0.5) * 10;
+                }
+                if (x + r < 0) gameOver = true;
+                drawPaddle();
+                p.fill(255, 220, 50);
+                p.stroke(200, 160, 20);
+                p.strokeWeight(1.5);
+                p.ellipse(x, y, r * 2, r * 2);
+            };
+ 
+            p.keyPressed = function() {
+                if (p.key === ' ' && gameOver) {
+                    gameOver = false;
+                    x = 250; y = 150;
+                    vx = -6; vy = 5;
+                    paddleY = 150 - paddleH / 2;
+                }
+            };
+ 
+            function drawPaddle() {
+                p.fill(255);
+                p.noStroke();
+                p.rect(paddleX, paddleY, paddleW, paddleH, 3);
+            }
+ 
+            function drawBackground() {
+                p.background(237, 116, 40);
+                p.noStroke();
+                p.fill(255);
+                p.rect(0, 0, 2, 300);
+                p.rect(0, 0, 500, 2);
+                p.rect(250, 0, 2, 300);
+                p.rect(498, 0, 2, 300);
+                p.rect(0, 298, 500, 2);
+                p.rect(125, 30, 2, 240);
+                p.rect(375, 30, 2, 240);
+                p.rect(125, 150, 250, 2);
+                p.rect(0, 30, 500, 2);
+                p.rect(0, 270, 500, 2);
+                p.rect(0, 150, 15, 2);
+                p.rect(485, 150, 15, 2);
+            }
+        });
+    }
+}
+ 
+function closeGamePopup() {
+    document.getElementById('game-overlay').classList.add('hidden');
+    if (gameSketch) {
+        gameSketch.remove();
+        gameSketch = null;
+    }
+}
+ 

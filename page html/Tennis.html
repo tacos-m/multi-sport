@@ -68,9 +68,6 @@
 			<li>Quatrième point : <strong>« jeu »</strong></li>
 		</ul>
 		<p>A 40-40, il faut deux points d'écart pour gagner : avantage puis jeu.</p>
-        <div id="center">
-            <button onclick="openPopup('materiel')">Simulez un jeu</button>
-        </div>
     </div>
  
     <div class="block">
@@ -86,9 +83,6 @@
 			<li>A 6-6 → tie-break</li>
 		</ul>
 		<p>Le tie-break est un jeu spécial qui permet de départager les joueurs en 7 points.</p>
-        <div id="center">
-            <button onclick="openPopup('set')">Simulez un set</button>
-        </div>
     </div>
 </section>
  
@@ -153,183 +147,12 @@
     <div class="game-popup">
         <button class="game-close-btn" onclick="closeGamePopup()">&times;</button>
         <h3>🎾 Mini Tennis</h3>
-        <p class="game-instructions">Utilisez les flèches ↑ ↓ pour déplacer la raquette. <strong>Espace</strong> pour rejouer.</p>
+        <p class="game-instructions">Utilisez les flèches ↑ ↓ pour déplacer la raquette. Espace pour rejouer.</p>
         <div id="game-canvas-container"></div>
     </div>
 </div>
  
 <script src="../Script/Tennis.js"></script>
- 
-<style>
-.game-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.75);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    backdrop-filter: blur(4px);
-    animation: fadeIn 0.25s ease;
-}
-.game-overlay.hidden {
-    display: none;
-}
-.game-popup {
-    background: #1a1a2e;
-    border: 2px solid #ed7428;
-    border-radius: 16px;
-    padding: 24px;
-    text-align: center;
-    position: relative;
-    box-shadow: 0 0 40px rgba(237, 116, 40, 0.4);
-    animation: popIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-.game-popup h3 {
-    color: #ed7428;
-    font-size: 1.4rem;
-    margin: 0 0 6px 0;
-}
-.game-instructions {
-    color: #ccc;
-    font-size: 0.85rem;
-    margin: 0 0 16px 0;
-}
-.game-close-btn {
-    position: absolute;
-    top: 10px;
-    right: 14px;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 1.6rem;
-    cursor: pointer;
-    line-height: 1;
-    transition: color 0.2s;
-}
-.game-close-btn:hover {
-    color: white;
-}
-#game-canvas-container canvas {
-    border-radius: 8px;
-    display: block;
-}
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-@keyframes popIn {
-    from { transform: scale(0.8); opacity: 0; }
-    to   { transform: scale(1);   opacity: 1; }
-}
-</style>
- 
-<script>
-let gameSketch = null;
- 
-function openGamePopup() {
-    document.getElementById('game-overlay').classList.remove('hidden');
- 
-    if (!gameSketch) {
-        gameSketch = new p5(function(p) {
-            let x, y, vx, vy, r;
-            let paddleX, paddleY, paddleW, paddleH;
-            let gameOver = false;
-            let paddleSpeed = 5;
- 
-            p.setup = function() {
-                let canvas = p.createCanvas(500, 300);
-                canvas.parent('game-canvas-container');
-                r = 10;
-                x = 250; y = 150;
-                vx = -6; vy = 5;
-                paddleW = 6; paddleH = 60;
-                paddleX = 2;
-                paddleY = 150 - paddleH / 2;
-            };
- 
-            p.draw = function() {
-                drawBackground();
-                if (gameOver) {
-                    drawPaddle();
-                    p.textAlign(p.CENTER, p.CENTER);
-                    p.textSize(28);
-                    p.fill(255);
-                    p.text("GAME OVER", p.width / 2, p.height / 2);
-                    p.textSize(16);
-                    p.text("Appuie sur ESPACE pour rejouer", p.width / 2, p.height / 2 + 40);
-                    return;
-                }
-                if (p.keyIsDown(p.UP_ARROW))   paddleY -= paddleSpeed;
-                if (p.keyIsDown(p.DOWN_ARROW)) paddleY += paddleSpeed;
-                paddleY = p.constrain(paddleY, 31, 270 - paddleH);
-                x += vx; y += vy;
-                if (y - r <= 31)  { vy *= -1; y = r + 31; }
-                if (y + r >= 270) { vy *= -1; y = 270 - r; }
-                if (x + r >= 498) { vx *= -1; x = 498 - r; }
-                if (vx < 0 && x - r <= paddleX + paddleW && x - r >= paddleX && y >= paddleY && y <= paddleY + paddleH) {
-                    vx *= -1;
-                    x = paddleX + paddleW + r;
-                    let hitPos = (y - paddleY) / paddleH;
-                    vy = (hitPos - 0.5) * 10;
-                }
-                if (x + r < 0) gameOver = true;
-                drawPaddle();
-                p.fill(255, 220, 50);
-                p.stroke(200, 160, 20);
-                p.strokeWeight(1.5);
-                p.ellipse(x, y, r * 2, r * 2);
-            };
- 
-            p.keyPressed = function() {
-                if (p.key === ' ' && gameOver) {
-                    gameOver = false;
-                    x = 250; y = 150;
-                    vx = -6; vy = 5;
-                    paddleY = 150 - paddleH / 2;
-                }
-            };
- 
-            function drawPaddle() {
-                p.fill(255);
-                p.noStroke();
-                p.rect(paddleX, paddleY, paddleW, paddleH, 3);
-            }
- 
-            function drawBackground() {
-                p.background(237, 116, 40);
-                p.noStroke();
-                p.fill(255);
-                p.rect(0, 0, 2, 300);
-                p.rect(0, 0, 500, 2);
-                p.rect(250, 0, 2, 300);
-                p.rect(498, 0, 2, 300);
-                p.rect(0, 298, 500, 2);
-                p.rect(125, 30, 2, 240);
-                p.rect(375, 30, 2, 240);
-                p.rect(125, 150, 250, 2);
-                p.rect(0, 30, 500, 2);
-                p.rect(0, 270, 500, 2);
-                p.rect(0, 150, 15, 2);
-                p.rect(485, 150, 15, 2);
-            }
-        });
-    }
-}
- 
-function closeGamePopup() {
-    document.getElementById('game-overlay').classList.add('hidden');
-    if (gameSketch) {
-        gameSketch.remove();
-        gameSketch = null;
-    }
-}
- 
-// Fermer en cliquant sur le fond
-document.getElementById('game-overlay').addEventListener('click', function(e) {
-    if (e.target === this) closeGamePopup();
-});
-</script>
- 
+
 </body>
 </html>

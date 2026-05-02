@@ -223,3 +223,53 @@ button:active {
 h3 {
     color: rgb(7, 96, 30);
 }
+
+/* JEU POPUP */
+.game-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.25s ease;
+}
+.game-overlay.hidden {
+    display: none;
+}
+.game-popup {
+    background: #1a1a2e;
+    border: 2px solid #ed7428;
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    position: relative;
+}
+.game-popup h3 {
+    color: #ed7428;
+    font-size: 1.4rem;
+    margin: 0 0 6px 0;
+}
+.game-instructions {
+    color: #ccc;
+    font-size: 0.85rem;
+    margin: 0 0 16px 0;
+}
+.game-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.6rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+.game-close-btn:hover {
+    color: white;
+}
+
