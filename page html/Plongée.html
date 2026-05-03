@@ -23,13 +23,44 @@
     <img src="../images/image-plongee.jpg" alt="plongée">
     <div class="intro">
         <h3>Découvrir la plongée</h3>
+
         <p>
             La plongée sous-marine permet d'explorer les fonds marins,
             observer des espèces uniques et vivre une expérience exceptionnelle.
             Venez découvrir tout cela à travers cette page ! 
         </p>
     </div>
+
+
+    
+
+    <p>
+        La plongée sous-marine est une activité passionnante qui permet de découvrir un monde totalement différent sous la surface de l’eau.  
+        Elle offre une expérience unique, entre calme, exploration et émerveillement face à la richesse des fonds marins.
+    </p>
+
+    <p>
+        Je pratique la plongée depuis maintenant 3 ans, et c’est devenu une véritable passion.  
+        Au fil du temps, j’ai appris à mieux gérer ma respiration, à rester calme et à observer la vie marine avec attention.
+    </p>
+
+    <p>
+        C’est pour cela que j’ai décidé de partager cette passion à travers ce site : pour faire découvrir la plongée et montrer qu’elle est accessible à tous.
+    </p>
+
+    <p>
+        La plongée permet aussi de réduire le stress, d’améliorer la respiration et de se reconnecter à la nature.
+    </p>
+</div>
+
+    
+
+    
+
+</div>
 </section>
+
+
 
 <!-- BLOCS -->
 <section class="blocks">
@@ -54,20 +85,57 @@
 <!-- POPUP -->
 <div id="popup" class="popup">
     <p id="popupText"></p>
+
+    <!-- Liste espèces (UNIQUEMENT lieux) -->
+  <div id="listeEspeces" style="display:none;">
+    <label>Espèces observables :</label>
+    <ul id="especesList">
+        <li> Poisson-clown</li>
+        <li> Tortue marine</li>
+        <li> Requin de récif</li>
+        <li> Raie manta</li>
+        <li> Coraux tropicaux</li>
+    </ul>
+</div>
+
+    <br>
     <button onclick="closePopup()">Fermer</button>
 </div>
 
-<!-- QUIZ -->
-<section class="quiz">
-    <h3>Quiz : Teste tes connaissances</h3>
-    <p>Quel équipement permet de respirer sous l'eau ?</p>
-    <button onclick="checkAnswer('a')">Masque</button> 
-    <button onclick="checkAnswer('b')">Détendeur</button>
-    <button onclick="checkAnswer('c')">Palmes</button>
+
+
+
+    
+    <p>Quel équipement permet de respirer sous l’eau ?</p>
+    <div>
+        <button onclick="checkAnswer(this, false)">Masque</button>
+        <button onclick="checkAnswer(this, true)">Détendeur</button>
+        <button onclick="checkAnswer(this, false)">Palmes</button>
+    </div>
+
+    
     <p>Quels sont les bienfaits de la plongée ?</p>
-    <button onclick="checkAnswer('d')">Réduire le stresse</button> 
-    <button onclick="checkAnswer('e')">Angoisser</button>
-    <button onclick="checkAnswer('f')">Compliquer la respiration</button>
+    <div>
+        <button onclick="checkAnswer(this, true)">Réduit le stress</button>
+        <button onclick="checkAnswer(this, false)">Est angoissant</button>
+        <button onclick="checkAnswer(this, false)">Trouble la respiration</button>
+    </div>
+
+    
+    <p>Où peut-on pratiquer la plongée ?</p>
+    <div>
+        <button onclick="checkAnswer(this, true)">Dans la mer</button>
+        <button onclick="checkAnswer(this, false)">Dans le désert</button>
+        <button onclick="checkAnswer(this, false)">Dans l’espace</button>
+    </div>
+
+    <p>Quel niveau correspond à un plongeur débutant ?</p>
+    <div>
+        <button onclick="checkAnswer(this, true)">N1</button>
+        <button onclick="checkAnswer(this, false)">N2</button>
+        <button onclick="checkAnswer(this, false)">N3</button>
+    </div>
+
     <p id="result"></p>
 </section>
 
