@@ -30,13 +30,16 @@ Mercredi 15 avril,
         Création des popups de la liste de selection J'ai eu beaucoup de mal pour réussir à programmer les popup. J'ai fini par réussir grâce à une video YouTube.
     Santiago :
         Recherche de chaque image a téléchager dans le ficher image
+Jeudi 16 avril, 
+    Mathilde : 
+        Création du terrain de tennis pour le jeu. Un peu casse-tête par rapport aux longueurs des lignes 
 Vendredi 17 avril,
     Santiago :
-        Implentation du jeu du jeu d'echec dans la plage html + création d'un jeu de tennis
+        Implentation du jeu du jeu d'echec dans la plage html + suite de la création du jeu de tennis
     Selma :
         Création d'un quizz et du logo sur canva 
     Mathilde : 
-        Mise en relation de toutes les pages entre elles via les boutons du haut + renomer tous les fichiers. Plutôt simple mais au début c'était un vrai casse-tete pour ne pas s'emmêler les pinceaux.
+        Mise en relation de toutes les pages entre elles via les boutons du haut + renommer tous les fichiers. Plutôt simple mais faut pas s'emmêler les pinceaux.
 Mardi 21 avril,
     Santigo : 
         Création des 2 premiers block "Grands noms" et "différetes cadences"
@@ -51,7 +54,7 @@ Dimanche 26 avril,
         Insertion du logo dans la page d'accueil ainsi que de la photo de groupe 
 Lundi 27 avril, 
     Mathilde : 
-        Création du footer de la page d'acceuil (les informations) avec son CSS
+        Création du footer de la page d'acceuil (les informations) avec son CSS. 
 Mercredi 29 avril, 
     Selma : 
         Modifications esthétiques de la page d'acceuil ( ajout de css ) 
