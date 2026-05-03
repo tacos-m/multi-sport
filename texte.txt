@@ -18,7 +18,7 @@ Vendredi 10 avril,
     Santiago :
         implentation d'un jeu d'echec fonctionelle en java script 
     Mathilde : 
-        Début de l'html de la page sur le tennis (head + Histoire du tennis, et règles du tennis) 
+        Début de l'html de la page sur le tennis (head + Histoire du tennis, et règles du tennis). 
 Samedi 11 avril, 
     Mathilde : 
         Création du CSS sur la page de tennis ( couleurs de fond, titre, encadrées, photo alignées au texte ). C'était relativement long mais plutot facile pour le moment.
@@ -36,22 +36,22 @@ Vendredi 17 avril,
     Selma :
         Création d'un quizz et du logo sur canva 
     Mathilde : 
-        Mise en relation de toutes les pages entre elles via les boutons du haut + renomer tous les fichiers
+        Mise en relation de toutes les pages entre elles via les boutons du haut + renomer tous les fichiers. Plutôt simple mais au début c'était un vrai casse-tete pour ne pas s'emmêler les pinceaux.
 Mardi 21 avril,
     Santigo : 
         Création des 2 premiers block "Grands noms" et "différetes cadences"
     Mathilde : 
-        Début création de la page d'accueil (titre, présentation du sujet et les trois blocks de chaque sports), liée à toutes les autres pages
-        Mise en popup du jeu de tennis : c'était compliqué mais au final j'ai réussi
+        Début création de la page d'accueil (titre, présentation du sujet et les trois blocks, 1 pour chaque sport), liée à toutes les autres pages.
+        Mise en popup du jeu de tennis : c'était compliqué mais au final j'ai réussi grâce à beaucoup de recherche sur Internet
 Vendredi 24 avril, 
     Santigo : 
         Création des 2 derniers block "Les déplacements" et "conseils"
 Dimanche 26 avril, 
     Selma : 
-        Insertion du logo dans la page d'accueil ainsi que la photo de groupe 
+        Insertion du logo dans la page d'accueil ainsi que de la photo de groupe 
 Lundi 27 avril, 
     Mathilde : 
-        Footer de la page d'acceuil (les informations)
+        Création du footer de la page d'acceuil (les informations) avec son CSS
 Mercredi 29 avril, 
     Selma : 
-        Modifications esthétiques du footer de la page d'acceuil et de la page en général
+        Modifications esthétiques de la page d'acceuil ( ajout de css ) 
