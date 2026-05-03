@@ -5,36 +5,34 @@
     <link rel="stylesheet" href="../CSS/Tennis.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
 </head>
- 
+
 <body>
- 
+
 <header>
-    <button onclick="window.location.href='accueil.html'"><h2>🏠︎</h2></button>
-        <h1>Le tennis</h1>
+    <button class="home-btn" onclick="window.location.href='accueil.html'">🏠︎</button>
+    <h1>Le tennis</h1>
     <nav>
         <button class="active" onclick="window.location.href='Tennis.html'">Tennis</button>
         <button onclick="window.location.href='Plongée.html'">Plongée</button>
         <button onclick="window.location.href='Chess.html'">Echecs</button>
     </nav>
 </header>
- 
+
 <!-- INTRO -->
 <section class="container">
     <img src="../images/histoir_tennis.jpg" alt="tennis">
- 
     <div class="intro">
         <div id="center">
             <div id="sous-titre">
                  <h2>L'histoire du tennis</h2>
             </div>
-			<p>Le tennis est né entre 1850 et 1870. Ce sport est une adaptation anglaise du jeu de paume. La première mise en jeu s'effectuant à quinze pieds, puis trente, puis quarante, d'où la façon particulière de compter les points dans le tennis moderne. Il semble que le premier tournoi de tennis eut lieu en août 1876 sur un court aménagé dans la propriété de M. William Appleton à Nahant dans le Massachusetts</p>          
+            <p>Le tennis est né entre 1850 et 1870. Ce sport est une adaptation anglaise du jeu de paume. La première mise en jeu s'effectuant à quinze pieds, puis trente, puis quarante, d'où la façon particulière de compter les points dans le tennis moderne. Il semble que le premier tournoi de tennis eut lieu en août 1876 sur un court aménagé dans la propriété de M. William Appleton à Nahant dans le Massachusetts</p>          
         </div>
     </div>
 </section>
- 
+
 <section class="container">
     <img src="../images/terrain_tennis.jpg" alt="tennis">
- 
     <div class="intro">
         <div id="center">
             <div id="sous-titre">
@@ -44,13 +42,13 @@
             <ol>
                 <li>La balle doit <strong>rebondir dans le court adverse</strong>, sinon c'est une faute.<hr></li>
                 <li>Au <strong>service</strong>, le joueur dispose de <strong>2 tentatives</strong>. Deux fautes = double fautes → point perdu.<hr></li>
-                <li>La balle peut touvher le filet au service si elle retombe dans le carré : c'est un <strong>let</strong>, le service est redonné<hr></li>
+                <li>La balle peut toucher le filet au service si elle retombe dans le carré : c'est un <strong>let</strong>, le service est redonné<hr></li>
                 <li>Les joueurs <strong>alternent le service</strong> à chaque jeu.<hr></li>
                 <li>En simple, les couloirs latéraux sont <strong>hors jeu</strong>. En double ils sont valides.</li>
             </ol>        
     </div>
 </section>
- 
+
 <!-- BLOCS -->
 <section class="blocks">
     <div class="block">
@@ -60,32 +58,32 @@
             </div>
         </div>
         <p>Le tennis utilise un système de points unique :</p>
-		<ul>
-			<li>Pas de point : <strong>« 0 »</strong> ou <strong>« Love »</strong></li>
-			<li>Premier point : <strong>« 15 »</strong></li>
-			<li>Deuxième point : <strong>« 30 »</strong></li>
-			<li>Troisième point : <strong>« 40 »</strong></li>
-			<li>Quatrième point : <strong>« jeu »</strong></li>
-		</ul>
-		<p>A 40-40, il faut deux points d'écart pour gagner : avantage puis jeu.</p>
+        <ul>
+            <li>Pas de point : <strong>« 0 »</strong> ou <strong>« Love »</strong></li>
+            <li>Premier point : <strong>« 15 »</strong></li>
+            <li>Deuxième point : <strong>« 30 »</strong></li>
+            <li>Troisième point : <strong>« 40 »</strong></li>
+            <li>Quatrième point : <strong>« jeu »</strong></li>
+        </ul>
+        <p>A 40-40, il faut deux points d'écart pour gagner : avantage puis jeu.</p>
     </div>
- 
+
     <div class="block">
         <div id="center">
             <div id="sous-titre">
                 <h3>Le comptage d'un set</h3>
             </div>
         </div>
-        <p>Pour gagner un set, un joeur doit remporter 6 jeux avec au moins 2 jeux d'écart.</p>
-		<ul>
-			<li>Scores possibles : 6-0, 6-2, 6-4</li>
-			<li>A 5-5 → il faut aller à 7-5</li>
-			<li>A 6-6 → tie-break</li>
-		</ul>
-		<p>Le tie-break est un jeu spécial qui permet de départager les joueurs en 7 points.</p>
+        <p>Pour gagner un set, un joueur doit remporter 6 jeux avec au moins 2 jeux d'écart.</p>
+        <ul>
+            <li>Scores possibles : 6-0, 6-2, 6-4</li>
+            <li>A 5-5 → il faut aller à 7-5</li>
+            <li>A 6-6 → tie-break</li>
+        </ul>
+        <p>Le tie-break est un jeu spécial qui permet de départager les joueurs en 7 points.</p>
     </div>
 </section>
- 
+
 <!-- JOUEURS -->
 <section class="container">
     <section id="joueurs">
@@ -95,53 +93,52 @@
                      <h3>Obtenez des informations sur les joueurs</h3>
                 </div>
             </div>
-	        <div class="selectors">
-      	        <div class="selector-group">
-        	        <label for="joueur">Choisissez un joueur :</label>
-        	        <select id="joueur">
-          		        <option value="">-- Veuillez choisir une option --</option>
-          		        <option value="djokovic">Novak Djokovic</option>
-          		        <option value="nadal">Rafael Nadal</option>
-          		        <option value="federer">Roger Federer</option>
-          		        <option value="sinner">Jannik Sinner</option>
-          		        <option value="alcaraz">Carlos Alcaraz</option>
-        	        </select>
-      	        </div>
- 
-      	        <div class="selector-group">
-        	        <label for="joueuse">Choisissez une joueuse :</label>
-        	        <select id="joueuse">
-          		        <option value="">-- Veuillez choisir une option --</option>
-          		        <option value="swiatek">Iga Świątek</option>
-          		        <option value="sabalenka">Aryna Sabalenka</option>
-          		        <option value="gauff">Coco Gauff</option>
-          		        <option value="williams">Serena Williams</option>
-          		        <option value="halep">Simona Halep</option>
-        	        </select>
-      	        </div>
+            <div class="selectors">
+                <div class="selector-group">
+                    <label for="joueur">Choisissez un joueur :</label>
+                    <select id="joueur">
+                        <option value="">-- Veuillez choisir une option --</option>
+                        <option value="djokovic">Novak Djokovic</option>
+                        <option value="nadal">Rafael Nadal</option>
+                        <option value="federer">Roger Federer</option>
+                        <option value="sinner">Jannik Sinner</option>
+                        <option value="alcaraz">Carlos Alcaraz</option>
+                    </select>
+                </div>
+                <div class="selector-group">
+                    <label for="joueuse">Choisissez une joueuse :</label>
+                    <select id="joueuse">
+                        <option value="">-- Veuillez choisir une option --</option>
+                        <option value="swiatek">Iga Świątek</option>
+                        <option value="sabalenka">Aryna Sabalenka</option>
+                        <option value="gauff">Coco Gauff</option>
+                        <option value="williams">Serena Williams</option>
+                        <option value="halep">Simona Halep</option>
+                    </select>
+                </div>
             </div>
         </div>
+    </section>
 </section>
-</section>
- 
+
 <div id="overlay" class="overlay hidden">
     <div class="popup">
-      	<button class="close-btn" id="closeBtn">&times;</button>
-      	<img id="popup-photo" src="" alt="Photo du joueur" />
-      	<h2 id="popup-nom"></h2>
-      	<p id="popup-nationalite"></p>
-      	<p id="popup-naissance"></p>
-      	<p id="popup-classement"></p>
-      	<p id="popup-palmares"></p>
+        <button class="close-btn" id="closeBtn">&times;</button>
+        <img id="popup-photo" src="" alt="Photo du joueur" />
+        <h2 id="popup-nom"></h2>
+        <p id="popup-nationalite"></p>
+        <p id="popup-naissance"></p>
+        <p id="popup-classement"></p>
+        <p id="popup-palmares"></p>
     </div>
 </div>
- 
+
 <!-- JEU -->
 <section class="jeu">
     <h2>A vous de jouer !</h2>
     <button onclick="openGamePopup()">Cliquez ici pour jouer</button>
 </section>
- 
+
 <!-- POPUP JEU -->
 <div id="game-overlay" class="game-overlay hidden">
     <div class="game-popup">
@@ -151,7 +148,7 @@
         <div id="game-canvas-container"></div>
     </div>
 </div>
- 
+
 <script src="../Script/Tennis.js"></script>
 
 </body>

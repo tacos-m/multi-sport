@@ -9,9 +9,9 @@
 <body>
 
 <header>
-    <h2> La Plongée  sous-marine</h2> 
+    <button class="home-btn" onclick="window.location.href='accueil.html'">🏠︎</button>
+    <h2>La Plongée sous-marine</h2>
     <nav>
-        <button onclick="window.location.href='accueil.html'"><h1>🏠︎</h1></button>
         <button onclick="window.location.href='Tennis.html'">Tennis</button>
         <button class="active" onclick="window.location.href='Plongée.html'">Plongée</button>
         <button onclick="window.location.href='Chess.html'">Echecs</button>
@@ -21,11 +21,10 @@
 <!-- INTRO -->
 <section class="container">
     <img src="../images/image-plongee.jpg" alt="plongée">
-
     <div class="intro">
         <h3>Découvrir la plongée</h3>
         <p>
-            La plongée sous-marine permet d’explorer les fonds marins,
+            La plongée sous-marine permet d'explorer les fonds marins,
             observer des espèces uniques et vivre une expérience exceptionnelle.
             Venez découvrir tout cela à travers cette page ! 
         </p>
@@ -38,17 +37,14 @@
         <h4>Matériel</h4>
         <button onclick="openPopup('materiel')">Voir</button>
     </div>
-
     <div class="block">
         <h4>Lieux</h4>
         <button onclick="openPopup('lieux')">Voir</button>
     </div>
-
     <div class="block">
         <h4>Bienfaits</h4>
         <button onclick="openPopup('bienfaits')">Voir</button>
     </div>
-
     <div class="block">
         <h4>Niveaux</h4>
         <button onclick="openPopup('niveaux')">Voir</button>
@@ -64,19 +60,14 @@
 <!-- QUIZ -->
 <section class="quiz">
     <h3>Quiz : Teste tes connaissances</h3>
-    <p>Quel équipement permet de respirer sous l’eau ?</p>
-
+    <p>Quel équipement permet de respirer sous l'eau ?</p>
     <button onclick="checkAnswer('a')">Masque</button> 
     <button onclick="checkAnswer('b')">Détendeur</button>
     <button onclick="checkAnswer('c')">Palmes</button>
-
     <p>Quels sont les bienfaits de la plongée ?</p>
-    
-     <button onclick="checkAnswer('d')">Réduire le stresse</button> 
+    <button onclick="checkAnswer('d')">Réduire le stresse</button> 
     <button onclick="checkAnswer('e')">Angoisser</button>
     <button onclick="checkAnswer('f')">Compliquer la respiration</button>
-
-
     <p id="result"></p>
 </section>
 

@@ -1,39 +1,43 @@
+/* ============================================================
+   accordion.js — Gestion des accordéons de la page Échecs
+   Lié à : Chess.html  |  Styles dans : chess.css
+   ============================================================ */
 
 function toggleAccordion(id) {
-  const allAccordions = document.querySelectorAll('.accordion');
-  const allBtns      = document.querySelectorAll('.voir-btn');
-  const target       = document.getElementById('accordion-' + id);
+  var allAccordions = document.querySelectorAll('.accordion');
+  var allBtns       = document.querySelectorAll('.voir-btn');
+  var target        = document.getElementById('accordion-' + id);
 
-  const isAlreadyOpen = target.classList.contains('open');
+  var isAlreadyOpen = target.classList.contains('open');
 
-  // Fermer tous les accordéons ouverts
+  /* --- Fermer tous les accordéons --- */
   allAccordions.forEach(function(acc) {
     acc.classList.remove('open');
     acc.style.maxHeight = null;
   });
 
-  // Remettre tous les boutons à "Voir"
+  /* --- Remettre tous les boutons à "Voir" --- */
   allBtns.forEach(function(btn) {
     btn.textContent = 'Voir';
     btn.classList.remove('active-btn');
   });
 
-  // Si l'accordéon ciblé était fermé, on l'ouvre
+  /* --- Ouvrir l'accordéon ciblé si il était fermé --- */
   if (!isAlreadyOpen) {
     target.classList.add('open');
     target.style.maxHeight = target.scrollHeight + 'px';
 
-    // Mettre à jour le bouton correspondant
-    const parentBlock = target.closest('.block');
+    /* Mettre à jour le bouton du bloc parent */
+    var parentBlock = target.closest('.block');
     if (parentBlock) {
-      const btn = parentBlock.querySelector('.voir-btn');
+      var btn = parentBlock.querySelector('.voir-btn');
       if (btn) {
         btn.textContent = 'Fermer';
         btn.classList.add('active-btn');
       }
     }
 
-    // Scroll doux vers l'accordéon
+    /* Scroll doux vers l'accordéon ouvert */
     setTimeout(function() {
       target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }, 100);

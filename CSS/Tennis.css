@@ -8,13 +8,26 @@ body {
 header {
     background-color: rgb(7, 96, 30);
     color: white;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
+    padding: 15px 20px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.4);
 }
 
+header h1 {
+    margin: 0;
+    text-align: center;
+}
 
- button {
+header nav {
+    display: flex;
+    gap: 5px;
+    justify-content: flex-end;
+}
+
+/* BOUTONS */
+button {
     padding: 10px 16px;
     margin: 5px;
     border: none;
@@ -25,6 +38,7 @@ header {
     background: white;
     color: rgb(7, 96, 30);
     box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    font-family: inherit;
 }
 
 button:hover {
@@ -42,6 +56,16 @@ button:active {
     background-color: rgb(7, 96, 30);
     color: white;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.home-btn {
+    width: 48px;
+    height: 42px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
 }
 
 /* INTRO */
@@ -83,127 +107,128 @@ button:active {
     padding: 8px;
 }
 
-/* POPUP */
+/* POPUP JOUEURS */
 .selectors {
-  margin: 1.5rem 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .selector-group {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .selector-group label {
-  font-weight: bold;
-  color: #2d5a10;
-  min-width: 200px;
+    font-weight: bold;
+    color: #2d5a10;
+    min-width: 200px;
 }
 
 .selector-group select {
-  padding: 0.5rem 0.75rem;
-  border: 1.5px solid #8fbc5a;
-  border-radius: 6px;
-  background: white;
-  font-size: 15px;
-  cursor: pointer;
-  min-width: 260px;
-  transition: border-color 0.2s;
+    padding: 0.5rem 0.75rem;
+    border: 1.5px solid #8fbc5a;
+    border-radius: 6px;
+    background: white;
+    font-size: 15px;
+    cursor: pointer;
+    min-width: 260px;
+    transition: border-color 0.2s;
 }
 
 .selector-group select:hover,
 .selector-group select:focus {
-  border-color: #3a7d1e;
-  outline: none;
+    border-color: #3a7d1e;
+    outline: none;
 }
 
 .overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  animation: fadeIn 0.2s ease;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease;
 }
 
 .overlay.hidden {
-  display: none;
+    display: none;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 .popup {
-  background: white;
-  border-radius: 16px;
-  padding: 2rem 2rem 1.75rem;
-  max-width: 380px;
-  width: 90%;
-  text-align: center;
-  position: relative;
-  animation: slideUp 0.25s ease;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    background: white;
+    border-radius: 16px;
+    padding: 2rem 2rem 1.75rem;
+    max-width: 380px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    animation: slideUp 0.25s ease;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
 }
 
 @keyframes slideUp {
-  from { transform: translateY(30px); opacity: 0; }
-  to   { transform: translateY(0);    opacity: 1; }
+    from { transform: translateY(30px); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
 }
 
 #popup-photo {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: top;
-  border: 4px solid #8fbc5a;
-  margin-bottom: 1rem;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    border: 4px solid #8fbc5a;
+    margin-bottom: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .popup h2 {
-  font-size: 1.3rem;
-  color: #3a7d1e;
-  margin-bottom: 0.75rem;
+    font-size: 1.3rem;
+    color: #3a7d1e;
+    margin-bottom: 0.75rem;
 }
 
 .popup p {
-  font-size: 14px;
-  color: #444;
-  margin-bottom: 0.4rem;
-  line-height: 1.5;
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 0.4rem;
+    line-height: 1.5;
 }
 
 .popup p strong {
-  color: #1a1a1a;
+    color: #1a1a1a;
 }
 
 .close-btn {
-  position: absolute;
-  top: 10px;
-  right: 14px;
-  background: none;
-  border: none;
-  font-size: 1.6rem;
-  cursor: pointer;
-  color: #888;
-  line-height: 1;
-  transition: color 0.2s;
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: #888;
+    line-height: 1;
+    transition: color 0.2s;
 }
 
 .close-btn:hover {
-  color: white;
+    color: white;
 }
+
 /* JEU */
 .jeu {
     background-color: rgb(7, 96, 30);
@@ -213,13 +238,14 @@ button:active {
 }
 
 #center {
-	text-align: center;
+    text-align: center;
 }
 
 #sous-titre {
-    color : RGB(100,180,50);
+    color: RGB(100,180,50);
     font-style: oblique;
 }
+
 h3 {
     color: rgb(7, 96, 30);
 }
@@ -236,9 +262,11 @@ h3 {
     backdrop-filter: blur(4px);
     animation: fadeIn 0.25s ease;
 }
+
 .game-overlay.hidden {
     display: none;
 }
+
 .game-popup {
     background: #1a1a2e;
     border: 2px solid #ed7428;
@@ -247,16 +275,19 @@ h3 {
     text-align: center;
     position: relative;
 }
+
 .game-popup h3 {
     color: #ed7428;
     font-size: 1.4rem;
     margin: 0 0 6px 0;
 }
+
 .game-instructions {
     color: #ccc;
     font-size: 0.85rem;
     margin: 0 0 16px 0;
 }
+
 .game-close-btn {
     position: absolute;
     top: 10px;
@@ -269,7 +300,7 @@ h3 {
     line-height: 1;
     transition: color 0.2s;
 }
+
 .game-close-btn:hover {
     color: white;
 }
-
